@@ -1,0 +1,67 @@
+{
+    "Parvulo": {
+        "Nombre Completo": {
+            "type": "String",
+            "required": true
+        },
+        "Fecha de Nacimiento": {
+            "type": "Date",
+            "required": true
+        },
+        "Domicilio": {
+            "type": "String",
+            "required": true
+        },
+        "Informacion Relevante": {
+            "type": "String",
+            "required": true
+        },
+        "Foto": {
+            "type": "image.png",
+            "required": true
+        }
+    },
+    "Asistente-Parvulo": {
+        "Nombre Completo": {
+            "type": "String",
+            "required": true
+        },
+        "Fecha de Nacimiento": {
+            "type": "Date",
+            "required": true
+        },
+        "Domicilio": {
+            "type": "String",
+            "required": true
+        },
+        "Telefono": {
+            "type": "Number"
+        },
+        "Correo": {
+            "type": "String",
+            "require": true
+        },
+        "Foto": {
+            "type": "image.png",
+            "required": true
+        },
+        "Informacion Relevante": {
+            "type": "String",
+            "required": true
+        }
+    },
+    "Apoderado": {
+        "Nombre Completo": {
+            "type": "String",
+            "required": true
+        },
+        "RUT": {
+            "type": "String",
+            "require": true
+        },
+        "Fecha de Nacimiento": {
+            "type": "Date",
+            "required": true
+        }
+    }
+}
