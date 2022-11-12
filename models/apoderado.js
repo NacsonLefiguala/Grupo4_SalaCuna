@@ -1,18 +1,41 @@
 const mongoose = require('mongoose');
-const ApoderadoSchema = mongoose.Schema;
+const Schema = mongoose.Schema;
 const ApoderadoSchema = new Schema({
-    NombreApoderado: {
+    NombreCompleto: {
         type: String,
         required: true
-    }
-    RutApoderado: {
+    },
+    RUT: {
         type: String,
         required: true
-    }
-    FechaNacimientoApoderado: {
+    },
+    FechaDeNacimiento: {
         type: Date,
+        required: true
+    },
+    Domicilio: {
+        type: String,
+        required: true
+    },
+    Telefono: {
+        type: Number
+    },
+    Correo: {
+        type: String,
+        require: true
+    },
+    Parentezco: {
+        type: String,
+        require: true
+    },
+    /*Foto: {
+        type: image.png,
+        required: true
+    },*/
+    InformacionRelevante: {
+        type: String,
         required: true
     }
 });
 
-module.exports = mongoose.model('apoderado', ApoderadoSchema);models/apoderado.js
+module.exports = mongoose.model('apoderado', ApoderadoSchema);

@@ -1,11 +1,17 @@
 const Apoderado = require('../models/apoderado');
 
 const createApoderado = (req, res) => {
-    const { NombreApoderado, RutApoderado, FechaNacimientoApoderado } = req.body;
+    const { NombreCompleto, RUT, FechaDeNacimiento, Domicilio, Telefono, Correo, Parentezco, /*Foto,*/ InformacionRelevante } = req.body;
     const newApoderado = newApoderado({
-        NombreApoderado,
-        RutApoderado,
-        FechaNacimientoApoderado
+        NombreCompleto,
+        RUT,
+        FechaDeNacimiento,
+        Domicilio,
+        Telefono,
+        Correo,
+        Parentezco,
+        //   Foto,
+        InformacionRelevante
     });
     newApoderado.save((err, apoderado) => {
         if (err) {
