@@ -1,8 +1,7 @@
 const Apoderado = require('../models/apoderado');
-const Apoderado = require('../models/apoderado');
 
 const createApoderado = (req, res) => {
-    const { NombreApoderado, RutApoderado, FechaNacimientoApoderado} = req.body;
+    const { NombreApoderado, RutApoderado, FechaNacimientoApoderado } = req.body;
     const newApoderado = newApoderado({
         NombreApoderado,
         RutApoderado,
