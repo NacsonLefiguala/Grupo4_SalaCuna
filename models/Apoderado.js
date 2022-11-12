@@ -9,7 +9,10 @@ const ApoderadoSchema = new Schema({
         type: String,
         required: true
     },
-    //lllllll
+    Rut: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('Apoderado', ApoderadoSchema);

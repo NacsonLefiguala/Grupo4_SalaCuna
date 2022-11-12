@@ -7,6 +7,7 @@ const createParvulo = (req, res) => {
         NombreCompleto,
         FechaDeNacimiento,
         Domicilio,
+        Rut,
         InformacionRelevante,
         // Foto
     });
