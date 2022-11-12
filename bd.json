@@ -4,6 +4,10 @@
             "type": "String",
             "required": true
         },
+        "RUT": {
+            "type": "String",
+            "required": true
+        },
         "Fecha de Nacimiento": {
             "type": "Date",
             "required": true
@@ -19,10 +23,22 @@
         "Foto": {
             "type": "image.png",
             "required": true
+        },
+        "Asistentes-Parvulos": {
+            "typer": "Schema.ObjectId",
+            "ref": "Asistente-Parvulo"
+        },
+        "Apoderados": {
+            "typer": "Schema.ObjectId",
+            "ref": "Apoderado"
         }
     },
     "Asistente-Parvulo": {
         "Nombre Completo": {
+            "type": "String",
+            "required": true
+        },
+        "RUT": {
             "type": "String",
             "required": true
         },
@@ -57,10 +73,33 @@
         },
         "RUT": {
             "type": "String",
-            "require": true
+            "required": true
         },
         "Fecha de Nacimiento": {
             "type": "Date",
+            "required": true
+        },
+        "Domicilio": {
+            "type": "String",
+            "required": true
+        },
+        "Telefono": {
+            "type": "Number"
+        },
+        "Correo": {
+            "type": "String",
+            "require": true
+        },
+        "Parentezco": {
+            "type": "String",
+            "require": true
+        },
+        "Foto": {
+            "type": "image.png",
+            "required": true
+        },
+        "Informacion Relevante": {
+            "type": "String",
             "required": true
         }
     }
