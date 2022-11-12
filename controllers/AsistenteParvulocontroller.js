@@ -1,6 +1,6 @@
 const AsistenteParvulo = require('../models/AsistenteParvulo');
 
-const createAsistenteAsistenteParvulo = (req, res) => {
+const createAsistenteParvulo = (req, res) => {
     const { NombreCompleto, FechaDeNacimiento, Domicilio, Rut, Telefono, Correo, InformacionRelevante } = req.body;
     const newAsistenteParvulo = new AsistenteParvulo({
         NombreCompleto,
