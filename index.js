@@ -11,6 +11,13 @@ app.use(express.json());
 app.options('*', cors());
 app.use('/api', parvuloRoutes);
 
+const AsistenteParvuloRoutes = require('./routes/AsistenteParvuloRoutes');
+
+app.use(cors())
+app.use(express.json());
+app.options('*', cors());
+app.use('/api', AsistenteParvuloRoutes);
+
 app.listen(process.env.PORT, () => {
     console.log('El servidor corre en el puerto ->', process.env.PORT)
 });
