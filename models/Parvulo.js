@@ -5,6 +5,10 @@ const ParvuloSchema = new Schema({
         type: String,
         required: true
     },
+    RUT: {
+        type: String,
+        required: true
+    },
     FechaDeNacimiento: {
         type: String,
         required: true
@@ -16,11 +20,19 @@ const ParvuloSchema = new Schema({
     InformacionRelevante: {
         type: String,
         required: true
-    }
+    },
     /*Foto: {
         type:,
         required: true
-    }*/
+    },*/
+    AsistentesParvulos: {
+        type: Schema.ObjectId,
+        ref: Asistente - Parvulo
+    },
+    Apoderados: {
+        type: Schema.ObjectId,
+        ref: Apoderado
+    }
 });
 
 module.exports = mongoose.model('parvulo', ParvuloSchema);
