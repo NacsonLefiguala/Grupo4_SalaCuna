@@ -1,7 +1,7 @@
 const AsistenteParvulo = require('../models/AsistenteParvulo');
 
 const createAsistenteAsistenteParvulo = (req, res) => {
-    const { NombreCompleto, FechaDeNacimiento, Domicilio, InformacionRelevante } = req.body;
+    const { NombreCompleto, FechaDeNacimiento, Domicilio, Rut, Telefono, Correo, InformacionRelevante } = req.body;
     const newAsistenteParvulo = new AsistenteParvulo({
         NombreCompleto,
         FechaDeNacimiento,
@@ -21,7 +21,7 @@ const createAsistenteAsistenteParvulo = (req, res) => {
 }
 
 const getAsistenteParvulos = (req, res) => {
-    Parvulo.find({}, (err, Asistenteparvulo) => {
+    AsistenteParvulo.find({}, (err, AsistenteParvulo) => {
         if (err) {
             return res.status(400).send({ message: "Error al obtener el Asistente parvulo" })
         }
