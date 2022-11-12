@@ -9,6 +9,7 @@ const ApoderadoSchema = new Schema({
         type: String,
         required: true
     },
+    //lllllll
 });
 
 module.exports = mongoose.model('Apoderado', ApoderadoSchema);
