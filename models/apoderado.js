@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ParvuloSchema = new Schema({
+const ApoderadoSchema = new Schema({
     NombreCompleto: {
         type: String,
         required: true
@@ -10,29 +10,32 @@ const ParvuloSchema = new Schema({
         required: true
     },
     FechaDeNacimiento: {
-        type: String,
+        type: Date,
         required: true
     },
     Domicilio: {
         type: String,
+        required: true
+    },
+    Telefono: {
+        type: Number
+    },
+    Correo: {
+        type: String,
         require: true
     },
+    Parentezco: {
+        type: String,
+        require: true
+    },
+    /*Foto: {
+        type: image.png,
+        required: true
+    },*/
     InformacionRelevante: {
         type: String,
         required: true
-    },
-    /*Foto: {
-        type:,
-        required: true
-    },*/
-    AsistentesParvulos: {
-        type: Schema.ObjectId,
-        ref: Asistente - Parvulo
-    },
-    Apoderados: {
-        type: Schema.ObjectId,
-        ref: Apoderado
     }
 });
 
-module.exports = mongoose.model('parvulo', ParvuloSchema);
+module.exports = mongoose.model('apoderado', ApoderadoSchema);
