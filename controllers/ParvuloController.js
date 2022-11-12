@@ -2,9 +2,10 @@ const parvulo = require('../models/parvulo');
 const Parvulo = require('../models/parvulo');
 
 const createParvulo = (req, res) => {
-    const { NombreCompleto, FechaDeNacimiento, Domicilio, InformacionRelevante } = req.body;
+    const { NombreCompleto, RUT, FechaDeNacimiento, Domicilio, InformacionRelevante, /*Foto*/ } = req.body;
     const newParvulo = new Parvulo({
         NombreCompleto,
+        RUT,
         FechaDeNacimiento,
         Domicilio,
         InformacionRelevante,
