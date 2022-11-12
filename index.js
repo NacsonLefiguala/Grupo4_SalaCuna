@@ -4,6 +4,12 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+const parvuloRoutes = require('./routes/parvuloRoutes');
+
+app.use(cors())
+app.use(express.json());
+app.options('*', cors());
+app.use('/api', parvuloRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log('El servidor corre en el puerto ->', process.env.PORT)
