@@ -6,7 +6,7 @@ const AsistenteParvuloSchema = new Schema({
         required: true
     },
     FechaDeNacimiento: {
-        type: String,
+        type: date,
         required: true
     },
     Domicilio: {
@@ -14,7 +14,11 @@ const AsistenteParvuloSchema = new Schema({
         require: true
     },
     Rut:{
-        type: String,
+        type: number,
+        required: true
+    },
+    Telefono: {
+        type: number,
         required: true
     },
     Correo:{
