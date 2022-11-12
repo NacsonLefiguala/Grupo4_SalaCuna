@@ -35,4 +35,4 @@ const AsistenteParvuloSchema = new Schema({
     }*/
 });
 
-module.exports = mongoose.model('parvulo', ParvuloSchema);
+module.exports = mongoose.model('AsistenteParvulo', AsistenteParvuloSchema);
