@@ -24,6 +24,10 @@ const getApoderados = (req, res) => {
     });
 }
 
+const getSpecificApoderado = (req, res) => (
+     Apoderado.find({}, (er))
+)
+
 module.exports = {
     createApoderado,
     getApoderados
