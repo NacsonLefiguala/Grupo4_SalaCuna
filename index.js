@@ -11,7 +11,16 @@ app.use(express.json());
 app.options('*', cors());
 app.use('/api', parvuloRoutes);
 
-app.listen(process.env.PORT, () => {
+const ApoderadoRoutes = require('./routes/ApoderadoRoutes');
+
+app.use(cors())
+app.use(express.json());
+app.options('*', cors());
+app.use('/api', ApoderadoRoutes);
+
+
+
+app.listen(process.env.PORT,  () => {
     console.log('El servidor corre en el puerto ->', process.env.PORT)
 });
 
