@@ -1,4 +1,3 @@
-const parvulo = require('../models/parvulo');
 const Parvulo = require('../models/parvulo');
 
 const createParvulo = (req, res) => {
