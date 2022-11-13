@@ -39,8 +39,19 @@ const deleteAsistenteParvulo = (req, res) => {
         });
 };
 
+const updateAsistenteParvulo = (req, res) => {
+    AsistenteParvulo.findByIdAndUpdate(req.params.id, req.body)
+        .then(function () {
+            res.json("Se actualizo el asistente de parvulo");
+        })
+        .catch(function (err) {
+            res.status(422).send("Error al actualizar asistente de parvulo.");
+        });
+};
+
 module.exports = {
     createAsistenteParvulo,
     getAsistenteParvulos,
-    deleteAsistenteParvulo
+    deleteAsistenteParvulo,
+    updateAsistenteParvulo
 }
