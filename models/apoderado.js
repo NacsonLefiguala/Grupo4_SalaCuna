@@ -28,10 +28,10 @@ const ApoderadoSchema = new Schema({
         type: String,
         require: true
     },
-    /*Foto: {
-        type: image.png,
+    Foto: {
+        type: String,
         required: true
-    },*/
+    },
     InformacionRelevante: {
         type: String,
         required: true
