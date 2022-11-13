@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const AsistenteParvulo = require('./AsistenteParvulo')
+const Apoderado = require('./apoderado')
 const Schema = mongoose.Schema;
 const ParvuloSchema = new Schema({
     NombreCompleto: {
@@ -27,7 +29,7 @@ const ParvuloSchema = new Schema({
     },
     AsistentesParvulos: {
         type: Schema.ObjectId,
-        ref: Asistente - Parvulo
+        ref: AsistenteParvulo
     },
     Apoderados: {
         type: Schema.ObjectId,
