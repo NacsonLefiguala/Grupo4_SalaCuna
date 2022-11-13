@@ -13,7 +13,7 @@ const AsistenteParvuloSchema = new Schema({
         type: String,
         require: true
     },
-    Rut:{
+    Rut: {
         type: number,
         required: true
     },
@@ -21,18 +21,18 @@ const AsistenteParvuloSchema = new Schema({
         type: number,
         required: true
     },
-    Correo:{
+    Correo: {
         type: String,
         required: true
     },
     InformacionRelevante: {
         type: String,
-        required: true 
+        required: true
+    },
+    Foto: {
+        type: String,
+        required: true
     }
-    /*Foto: {
-        type:,
-        required: true EEEE
-    }*/
 });
 
 module.exports = mongoose.model('AsistenteParvulo', AsistenteParvuloSchema);

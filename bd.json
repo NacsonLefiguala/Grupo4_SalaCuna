@@ -50,10 +50,6 @@
             "type": "String",
             "required": true
         },
-        "RUT": {
-            "type": "String",
-            "require": true
-        },
         "Telefono": {
             "type": "Number"
         },

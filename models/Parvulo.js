@@ -21,10 +21,10 @@ const ParvuloSchema = new Schema({
         type: String,
         required: true
     },
-    /*Foto: {
-        type:,
+    Foto: {
+        type: String,
         required: true
-    },*/
+    },
     AsistentesParvulos: {
         type: Schema.ObjectId,
         ref: Asistente - Parvulo
