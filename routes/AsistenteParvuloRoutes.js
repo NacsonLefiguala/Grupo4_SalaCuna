@@ -4,5 +4,6 @@ const AsistenteParvuloController = require('../controllers/AsistenteParvuloContr
 
 api.post('/AsistenteParvulo', AsistenteParvuloController.createAsistenteParvulo);
 api.get('/AsistenteParvulos', AsistenteParvuloController.getAsistenteParvulos);
+api.delete("/AsistenteParvulo/:id", AsistenteParvuloController.deleteAsistenteParvulo);
 
 module.exports = api;
