@@ -6,5 +6,6 @@ api.post('/AsistenteParvulo', AsistenteParvuloController.createAsistenteParvulo)
 api.get('/AsistenteParvulos', AsistenteParvuloController.getAsistenteParvulos);
 api.delete("/AsistenteParvulo/:id", AsistenteParvuloController.deleteAsistenteParvulo);
 api.patch("/AsistenteParvulo/:id", AsistenteParvuloController.updateAsistenteParvulo);
+api.get('/AsistenteParvulo/:id', AsistenteParvuloController.getAsistenteParvulo)
 
 module.exports = api;

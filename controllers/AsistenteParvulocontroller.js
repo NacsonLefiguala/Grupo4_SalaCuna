@@ -49,9 +49,20 @@ const updateAsistenteParvulo = (req, res) => {
         });
 };
 
+const getAsistenteParvulo = (req, res) => {
+    AsistenteParvulo.findById(req.params.id, function (err, asistente) {
+        if (!asistente) {
+            res.status(404).send("No result found");
+        } else {
+            res.json(asistente);
+        }
+    });
+};
+
 module.exports = {
     createAsistenteParvulo,
     getAsistenteParvulos,
     deleteAsistenteParvulo,
-    updateAsistenteParvulo
+    updateAsistenteParvulo,
+    getAsistenteParvulo
 }
