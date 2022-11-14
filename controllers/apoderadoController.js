@@ -17,7 +17,7 @@ const createApoderado = (req, res) => {
         if (err) {
             return res.status(400).send({ message: "Error al crear el apoderado", err})
         }
-        return res.status(201).send(Apoderado)
+        return res.status(200).send(Apoderado)
     });
 }
 
