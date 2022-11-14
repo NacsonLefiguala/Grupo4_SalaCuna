@@ -13,7 +13,7 @@ const createParvulo = (req, res) => {
     });
     newParvulo.save((err, Parvulo) => {
         if (err) {
-            return res.status(400).send({ message: "Error al crear el parvulo" }, err)
+            return res.status(400).send({ message: "Error al crear el parvulo", err})
         }
         return res.status(200).send(Parvulo)
     });
