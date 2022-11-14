@@ -11,22 +11,24 @@ const ApoderadoSchema = new Schema({
     },
     FechaDeNacimiento: {
         type: Date,
-        required: true
+        required: false,
+        default: Date.now()
     },
     Domicilio: {
         type: String,
         required: true
     },
     Telefono: {
-        type: Number
+        type: String,
+        required: true
     },
     Correo: {
         type: String,
-        require: true
+        required: true
     },
     Parentezco: {
         type: String,
-        require: true
+        required: true
     },
     Foto: {
         type: String,
@@ -38,4 +40,4 @@ const ApoderadoSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('apoderado', ApoderadoSchema);
+module.exports = mongoose.model('Apoderado', ApoderadoSchema);

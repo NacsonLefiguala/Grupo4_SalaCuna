@@ -12,12 +12,13 @@ const ParvuloSchema = new Schema({
         required: true
     },
     FechaDeNacimiento: {
-        type: String,
-        required: true
+        type: Date,
+        required: false,
+        default: Date.now()
     },
     Domicilio: {
         type: String,
-        require: true
+        required: true
     },
     InformacionRelevante: {
         type: String,
@@ -37,4 +38,4 @@ const ParvuloSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('parvulo', ParvuloSchema);
+module.exports = mongoose.model('Parvulo', ParvuloSchema);

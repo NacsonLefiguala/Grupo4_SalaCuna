@@ -1,7 +1,7 @@
 const Apoderado = require('../models/apoderado');
 
 const createApoderado = (req, res) => {
-    const { NombreCompleto, RUT, FechaDeNacimiento, Domicilio, Telefono, Correo, Parentezco, /*Foto,*/ InformacionRelevante } = req.body;
+    const { NombreCompleto, RUT, FechaDeNacimiento, Domicilio, Telefono, Correo, Parentezco, Foto, InformacionRelevante } = req.body;
     const newApoderado = newApoderado({
         NombreCompleto,
         RUT,
@@ -10,18 +10,18 @@ const createApoderado = (req, res) => {
         Telefono,
         Correo,
         Parentezco,
-        //   Foto,
+        Foto,
         InformacionRelevante
     });
-    newApoderado.save((err, apoderado) => {
+    newApoderado.save((err, Apoderado) => {
         if (err) {
-            return res.status(400).send({ message: "Error al crear el apoderado" })
+            return res.status(400).send({ message: "Error al crear el apoderado" }, err)
         }
-        return res.status(201).send(apoderado)
+        return res.status(201).send(Apoderado)
     });
 }
 
-const getApoderado = (req, res) => {
+const getApoderados = (req, res) => {
     Apoderado.find({}, (err, apoderado) => {
         if (err) {
             return res.status(400).send({ message: "Error al obtener el apoderado" })
@@ -30,7 +30,40 @@ const getApoderado = (req, res) => {
     });
 }
 
+const deleteApoderado = (req, res) => {
+    Apoderado.findByIdAndRemove(req.params.id)
+        .then(function () {
+            res.status(200).json("Se eliminò el apoderado");
+        })
+        .catch(function (err) {
+            res.status(400).send("Error al eliminar el apoderado.");
+        });
+};
+
+const updateApoderado = (req, res) => {
+    Apoderado.findByIdAndUpdate(req.params.id, req.body)
+        .then(function () {
+            res.json("Se actualizo el apoderado");
+        })
+        .catch(function (err) {
+            res.status(422).send("Error al actualizar apoderado.");
+        });
+};
+
+const getApoderado = (req, res) => {
+    Apoderado.findById(req.params.id, function (err, Apoderado) {
+        if (!Apoderado) {
+            res.status(404).send("No result found");
+        } else {
+            res.json(Apoderado);
+        }
+    });
+};
+
 module.exports = {
     createApoderado,
-    getApoderado
+    getApoderados,
+    deleteApoderado,
+    updateApoderado,
+    getApoderado,
 }

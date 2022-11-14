@@ -1,11 +1,11 @@
 const express = require('express');
 const api = express.Router();
-const parvuloController = require('../controllers/ParvuloController');
+const ParvuloController = require('../controllers/ParvuloController');
 
-api.post('/parvulo', parvuloController.createParvulo);
-api.get('/parvulos', parvuloController.getParvulos);
-api.get('/parvulosSpecific', parvuloController.getSpecificParvulo);
-api.get('/updateParvulo', parvuloController.updateParvulo);
-api.get('/deleteParvulo', parvuloController.getParvulos);
+api.post('/Parvulo', ParvuloController.createParvulo);
+api.get('/Parvulos', ParvuloController.getParvulos);
+api.delete("/Parvulo/:id", ParvuloController.deleteParvulo);
+api.patch("/Parvulo/:id", ParvuloController.updateParvulo);
+api.get('/Parvulo/:id', ParvuloController.getParvulo);
 
 module.exports = api;

@@ -21,7 +21,7 @@
             "required": true
         },
         "Foto": {
-            "type": "image.png",
+            "type": "String",
             "required": true
         },
         "Asistentes-Parvulos": {
@@ -58,7 +58,7 @@
             "require": true
         },
         "Foto": {
-            "type": "image.png",
+            "type": "String",
             "required": true
         },
         "Informacion Relevante": {
@@ -84,7 +84,7 @@
             "required": true
         },
         "Telefono": {
-            "type": "Number"
+            "type": "String"
         },
         "Correo": {
             "type": "String",
@@ -95,7 +95,7 @@
             "require": true
         },
         "Foto": {
-            "type": "image.png",
+            "type": "String",
             "required": true
         },
         "Informacion Relevante": {
