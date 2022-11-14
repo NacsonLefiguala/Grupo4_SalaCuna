@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const parvuloRoutes = require('./routes/parvuloRoutes');
+const parvuloRoutes = require('./routes/ParvuloRoutes');
 
 app.use(cors())
 app.use(express.json());
