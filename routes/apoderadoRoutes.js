@@ -1,6 +1,6 @@
 const express = require('express');
 const api = express.Router();
-const ApoderadoController = require('../controllers/apoderadoController');
+const ApoderadoController = require('../controllers/ApoderadoController');
 
 api.post('/apoderado', ApoderadoController.createApoderado);
 api.get('/apoderados', ApoderadoController.getApoderados);
