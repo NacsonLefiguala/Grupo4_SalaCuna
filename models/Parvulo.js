@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const AsistenteParvulo = require('./AsistenteParvulo')
-const Apoderado = require('./apoderado')
+const Apoderado = require('./Apoderado')
 const Schema = mongoose.Schema;
 const ParvuloSchema = new Schema({
     NombreCompleto: {
