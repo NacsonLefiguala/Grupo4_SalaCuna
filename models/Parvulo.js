@@ -27,14 +27,6 @@ const ParvuloSchema = new Schema({
     Foto: {
         type: String,
         required: true
-    },
-    AsistentesParvulos: {
-        type: Schema.ObjectId,
-        ref: AsistenteParvulo
-    },
-    Apoderados: {
-        type: Schema.ObjectId,
-        ref: Apoderado
     }
 });
 
