@@ -1,5 +1,5 @@
 {
-    "Parvulo": {
+    "EducadoraParvulo": {
         "Nombre Completo": {
             "type": "String",
             "required": true
@@ -8,7 +8,7 @@
             "type": "String",
             "required": true
         },
-        "Fecha de Nacimiento": {
+        "FechaNacimiento": {
             "type": "Date",
             "required": true
         },
@@ -16,25 +16,18 @@
             "type": "String",
             "required": true
         },
-        "Informacion Relevante": {
+        "Observaciones": {
             "type": "String",
             "required": true
         },
         "Foto": {
             "type": "String",
             "required": true
-        },
-        "Asistentes-Parvulos": {
-            "typer": "Schema.ObjectId",
-            "ref": "Asistente-Parvulo"
-        },
-        "Apoderados": {
-            "typer": "Schema.ObjectId",
-            "ref": "Apoderado"
         }
     },
-    "Asistente-Parvulo": {
-        "Nombre Completo": {
+
+    "AsistenteParvulo": {
+        "Nombre": {
             "type": "String",
             "required": true
         },
@@ -42,7 +35,7 @@
             "type": "String",
             "required": true
         },
-        "Fecha de Nacimiento": {
+        "FechaNacimiento": {
             "type": "Date",
             "required": true
         },
@@ -61,13 +54,14 @@
             "type": "String",
             "required": true
         },
-        "Informacion Relevante": {
+        "Obsercaciones": {
             "type": "String",
             "required": true
         }
     },
+
     "Apoderado": {
-        "Nombre Completo": {
+        "Nombre": {
             "type": "String",
             "required": true
         },
@@ -75,7 +69,7 @@
             "type": "String",
             "required": true
         },
-        "Fecha de Nacimiento": {
+        "FechaNacimiento": {
             "type": "Date",
             "required": true
         },
@@ -98,9 +92,81 @@
             "type": "String",
             "required": true
         },
-        "Informacion Relevante": {
+        "InformacionRelevante": {
             "type": "String",
             "required": true
+        },
+        "Apoderados":{
+            "type": "Schema.ObjectId",
+            "required": true
+        }
+    },
+
+    "Parvulo": {
+        "Nombre": {
+            "type": "String",
+            "required": true
+        },
+        "RUT": {
+            "type": "String",
+            "required": true
+        },
+        "FechaNacimiento": {
+            "type": "Date",
+            "required": true
+        },
+        "Domicilio": {
+            "type": "String",
+            "required": true
+        },
+        "InformacionRelevante": {
+            "type": "String",
+            "required": true
+        },
+        "Foto": {
+            "type": "String",
+            "required": true
+        },
+        "Apoderados":{
+            "Apoderados":{
+                "type": ["Schema.ObjectId"],
+                "ref" : "Apoderado"
+            }
+        },
+        "Parvulos":{
+            "type": "Schema.ObjectId",
+            "required": true
+        }
+    },
+
+    "Asistencia":{
+        "Sala":{
+            "type":"String",
+            "require": true
+        },
+        "FechaClase":{
+            "type": "Date",
+            "required": true
+        },
+        "Actividad":{
+            "type": "String",
+            "required": true
+        },
+        "EducadoraParvulo":{
+            "EducadoraParvulo":{
+                "type": "Schema.ObjectId",
+                "ref": "EducadoraParvulo"
+            }
+        },
+        "AsistenteParvulos":{
+            "AsistenteParvulos":{
+                "type": ["Schema.ObjectId"],
+                "ref": "AsistenteParvulo"
+            }
+        },
+        "Parvulos":{
+            "type":["Schema.ObjectId"],
+            "ref": "Parvulo"
         }
     }
 }
