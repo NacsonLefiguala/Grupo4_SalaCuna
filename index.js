@@ -4,33 +4,19 @@ const cors = require('cors');
 require('dotenv').config();
 const app = express();
 
+app.use(cors())
+app.use(express.json());
+app.options('*', cors());
+
 const EducadoraParvuloRoutes = require('./routes/EducadoraParvuloRoutes');
-
-app.use(cors())
-app.use(express.json());
-app.options('*', cors());
-app.use('/api', EducadoraParvuloRoutes);
-
 const parvuloRoutes = require('./routes/ParvuloRoutes');
-
-app.use(cors())
-app.use(express.json());
-app.options('*', cors());
-app.use('/api', parvuloRoutes);
-
 const AsistenteParvuloRoutes = require('./routes/AsistenteParvuloRoutes');
-
-app.use(cors())
-app.use(express.json());
-app.options('*', cors());
-app.use('/api', AsistenteParvuloRoutes);
-
 const ApoderadoRoutes = require('./routes/ApoderadoRoutes');
 
-app.use(cors())
-app.use(express.json());
-app.options('*', cors());
+app.use('/api', parvuloRoutes);
+app.use('/api', AsistenteParvuloRoutes);
 app.use('/api', ApoderadoRoutes);
+app.use('/api', EducadoraParvuloRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log('El servidor corre en el puerto ->', process.env.PORT)

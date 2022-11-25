@@ -13,8 +13,7 @@ const ParvuloSchema = new Schema({
     },
     FechaDeNacimiento: {
         type: Date,
-        required: false,
-        default: Date.now()
+        required: true,
     },
     Domicilio: {
         type: String,

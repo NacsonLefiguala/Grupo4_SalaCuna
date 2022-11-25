@@ -12,7 +12,6 @@ const ApoderadoSchema = new Schema({
     FechaDeNacimiento: {
         type: Date,
         required: false,
-        default: Date.now()
     },
     Domicilio: {
         type: String,
