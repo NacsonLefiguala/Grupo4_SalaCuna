@@ -10,7 +10,7 @@ const EducadoraParvuloSchema = new Schema({
     },
     FechaDeNacimiento: {
         type: Date,
-        required: false,
+        required: true,
     },
     Domicilio: {
         type: String,
