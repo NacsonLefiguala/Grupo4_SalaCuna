@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const AsistenteParvulo = require('./AsistenteParvulo');
+const EducadoraParvulo = require('./EducadoraParvulo');
+const Parvulo = require('./Parvulo');
 const Schema = mongoose.Schema;
 const AsistenciaSchema = new Schema ({
     Sala:{
@@ -7,7 +10,8 @@ const AsistenciaSchema = new Schema ({
     },
     FechaClase:{
         type: Date,
-        required: true
+        required: false,
+        default: Date.now()
     },
     Actividad:{
         type: String,

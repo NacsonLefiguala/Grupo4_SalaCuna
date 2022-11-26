@@ -15,7 +15,7 @@ const createAsistencia = (req, res) =>{
     });
 }
 
-const getAsistencia = (req, res) => {
+const getAsistencias = (req, res) => {
     Asistencia.find({}, (err, Asistencia) => {
         if (err) {
             return res.status(400).send({ message: "Error al obtener asistencia" })
@@ -25,11 +25,11 @@ const getAsistencia = (req, res) => {
 }
 
 const getSpecificAsistencia = (req, res) => {
-    EducadoraAsistencia.findById(req.params.id, function (err, Asistencia) {
+    Asistencia.findById(req.params.id, function (err, Asistencia) {
         if (!Asistencia) {
             res.status(404).send("No result found");
         } else {
-            res.json(asistencia);
+            res.json(Asistencia);
         }
     });
 }
@@ -37,7 +37,7 @@ const getSpecificAsistencia = (req, res) => {
 const updateAsistencia = (req, res) => {
     Asistencia.findByIdAndUpdate(req.params.id, req.body)
     .then(function () {
-        res.json("Se actualizo la asistencia del parvulo");
+        res.json("Se actualizo la asistencia");
     })
     .catch(function (err) {
         res.status(422).send("Error al actualizar la asistencia");
@@ -59,7 +59,7 @@ const deleteAsistencia = (req, res) => {
 
 module.exports = {
     createAsistencia,
-    getAsistencia,
+    getAsistencias,
     getSpecificAsistencia,
     updateAsistencia,
     deleteAsistencia

@@ -12,11 +12,13 @@ const EducadoraParvuloRoutes = require('./routes/EducadoraParvuloRoutes');
 const parvuloRoutes = require('./routes/ParvuloRoutes');
 const AsistenteParvuloRoutes = require('./routes/AsistenteParvuloRoutes');
 const ApoderadoRoutes = require('./routes/ApoderadoRoutes');
+const AsistenciaRoutes = require('./routes/AsistenciaRoutes');
 
 app.use('/api', parvuloRoutes);
 app.use('/api', AsistenteParvuloRoutes);
 app.use('/api', ApoderadoRoutes);
 app.use('/api', EducadoraParvuloRoutes);
+app.use('/api', AsistenciaRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log('El servidor corre en el puerto ->', process.env.PORT)
