@@ -4,13 +4,11 @@ const cors = require('cors');
 require('dotenv').config();
 const app = express();
 
-
 app.use(cors())
 app.use(express.json());
 app.options('*', cors());
 
-const routes = require("./routes/allRoutes")
-app.use("/api", routes)
+app.use("/api", require("./routes/allRoutes"));
 
 app.listen(process.env.PORT, () => {
     console.log('El servidor corre en el puerto ->', process.env.PORT)

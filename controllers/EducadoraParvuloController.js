@@ -23,7 +23,7 @@ const createEducadoraParvulo = (req, res) => {
 const getEducadoraParvulos = (req, res) => {
     EducadoraParvulo.find({}, (err, educadoraparvulo) => {
         if (err) {
-            return res.status(400).send({ message: "Error al obtener educadora parvulo" })
+            return res.status(400).send({ message: "Error al obtener educadoras parvulos" })
         }
         return res.status(200).send(educadoraparvulo)
     });
