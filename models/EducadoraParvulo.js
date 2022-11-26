@@ -18,7 +18,8 @@ const EducadoraParvuloSchema = new Schema({
     },
     Rut: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     Telefono: {
         type: Number,
@@ -26,7 +27,8 @@ const EducadoraParvuloSchema = new Schema({
     },
     Correo: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     InformacionRelevante: {
         type: String,
@@ -47,6 +49,9 @@ const EducadoraParvuloSchema = new Schema({
     Parvulo: {
         type: Schema.ObjectId,
         ref: Parvulo
+    },
+    Role:{
+        Type: ["admi"]
     }
 });
 

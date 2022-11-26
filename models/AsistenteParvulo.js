@@ -15,7 +15,8 @@ const AsistenteParvuloSchema = new Schema({
     },
     Rut: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     Telefono: {
         type: Number,
@@ -32,6 +33,9 @@ const AsistenteParvuloSchema = new Schema({
     Foto: {
         type: String,
         required: true
+    },
+    Role:{
+        Type: ["user"]
     }
 });
 

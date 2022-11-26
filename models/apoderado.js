@@ -7,7 +7,8 @@ const ApoderadoSchema = new Schema({
     },
     RUT: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     FechaDeNacimiento: {
         type: Date,
@@ -23,7 +24,8 @@ const ApoderadoSchema = new Schema({
     },
     Correo: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     Parentezco: {
         type: String,
@@ -36,6 +38,9 @@ const ApoderadoSchema = new Schema({
     InformacionRelevante: {
         type: String,
         required: true
+    },
+    Role:{
+        Type: ["user"]
     }
 });
 

@@ -9,7 +9,8 @@ const ParvuloSchema = new Schema({
     },
     RUT: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     FechaDeNacimiento: {
         type: Date,
@@ -26,7 +27,12 @@ const ParvuloSchema = new Schema({
     Foto: {
         type: String,
         required: true
+    },
+    Role:{
+        Type: ["user"]
     }
+
 });
+
 
 module.exports = mongoose.model('Parvulo', ParvuloSchema);
