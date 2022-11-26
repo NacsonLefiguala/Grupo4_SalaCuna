@@ -18,8 +18,8 @@ const ApoderadoSchema = new Schema({
         required: true
     },
     Telefono: {
-        type: String,
-        required: true
+        type: Number,
+        required: true,
     },
     Correo: {
         type: String,

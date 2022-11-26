@@ -13,6 +13,7 @@ const createApoderado = (req, res) => {
         Foto,
         InformacionRelevante
     });
+    validate(req,res)
     newApoderado.save((err, Apoderado) => {
         if (err) {
             return res.status(400).send({ message: "Error al crear el apoderado", err})
@@ -59,6 +60,22 @@ const getApoderado = (req, res) => {
         }
     });
 };
+
+const validate = (req,res) => {
+    if(!(!RutCadena(req.RUT) || !VerificadorRut(req.RUT.charAt(11)))){
+        return res.status(400).send({ message: "Error: el rut esta mal escrito"})
+    }
+}
+
+function RutCadena(input) {
+    let regex = /([0-9]+(\.[0-9]+)+)/i;
+    return regex.test(input);
+}
+
+function VerificadorRut(input) {
+    let regex = /[K-k0-9]+/i;
+    return regex.test(input);
+}
 
 module.exports = {
     createApoderado,

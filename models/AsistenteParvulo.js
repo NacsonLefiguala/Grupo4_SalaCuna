@@ -18,7 +18,7 @@ const AsistenteParvuloSchema = new Schema({
         required: true
     },
     Telefono: {
-        type: String,
+        type: Number,
         required: true
     },
     Correo: {
