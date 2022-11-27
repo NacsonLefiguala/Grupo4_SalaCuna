@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const AsistenciaSchema = new Schema ({
     Sala:{
         type:String,
-        require: true
+        require: true,
+        unique: true
     },
     FechaClase:{
         type: Date,
@@ -17,22 +18,6 @@ const AsistenciaSchema = new Schema ({
         type: String,
         required: true
     },
-    EducadoraParvulo:{
-        EducadoraParvulo:{
-            type: Schema.ObjectId,
-            ref: EducadoraParvulo
-        }
-    },
-    AsistenteParvulos:{
-        AsistenteParvulos:{
-            type: [Schema.ObjectId],
-            ref: AsistenteParvulo
-        }
-    },
-    Parvulos:{
-        type:[Schema.ObjectId],
-        ref: Parvulo
-    }
 });
 
 module.exports = mongoose.model('Asistencia', AsistenciaSchema);

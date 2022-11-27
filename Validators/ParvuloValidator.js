@@ -4,39 +4,26 @@ const ValidateResult = require('../helpers/ValidateHelpers')
 const ValidateCreate = [
     check('NombreCompleto')
         .exists()
-        .not()
         .isString()
+        .not()
         .isEmpty(),
-    check('RUT')
+    check('Rut')
         .exists()
-        .not()
         .isString()
+        .not()
         .isEmpty(),
     check('FechaNacimiento')
         .exists()
-        .not()
         .isDate()
+        .not()
         .isEmpty(),
     check('Domicilio')
         .isEmpty(),
-    check('Telefono')
-        .exists()
-        .not()
-        .isLength({ min: 9, max: 9 })
-        .isNumeric()
-        .isEmpty(),
-    check('Correo')
-        .exists()
-        .not()
-        .isEmpty()
-        .isEmail(),
-    check('Parentezco')
+    check('InformacionRelevante')
         .isEmpty(),
     check('Foto')
         .exists()
         .not()
-        .isEmpty(),
-    check('InformacionRelevante')
         .isEmpty(),
 
     (err, res, req, next) => {
@@ -45,7 +32,3 @@ const ValidateCreate = [
 ];
 
 module.exports = ValidateCreate
-
-
-
-

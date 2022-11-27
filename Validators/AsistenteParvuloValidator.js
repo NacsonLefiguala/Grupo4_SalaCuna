@@ -7,17 +7,17 @@ const ValidateCreate = [
         .not()
         .isString()
         .isEmpty(),
-    check('RUT')
-        .exists()
-        .not()
-        .isString()
-        .isEmpty(),
-    check('FechaNacimiento')
+    check('FechaDeNacimiento')
         .exists()
         .not()
         .isDate()
         .isEmpty(),
     check('Domicilio')
+        .isEmpty(),
+    check('Rut')
+        .exists()
+        .not()
+        .isString()
         .isEmpty(),
     check('Telefono')
         .exists()
@@ -28,15 +28,13 @@ const ValidateCreate = [
     check('Correo')
         .exists()
         .not()
-        .isEmpty()
-        .isEmail(),
-    check('Parentezco')
+        .isEmail()
+        .isEmpty(),
+    check('InformacionRelevante')
         .isEmpty(),
     check('Foto')
         .exists()
         .not()
-        .isEmpty(),
-    check('InformacionRelevante')
         .isEmpty(),
 
     (err, res, req, next) => {
@@ -45,7 +43,3 @@ const ValidateCreate = [
 ];
 
 module.exports = ValidateCreate
-
-
-
-

@@ -26,12 +26,9 @@ const ParvuloSchema = new Schema({
     },
     Foto: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
-    Role:{
-        Type: ["user"]
-    }
-
 });
 
 

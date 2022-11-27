@@ -21,6 +21,7 @@ const ApoderadoSchema = new Schema({
     Telefono: {
         type: Number,
         required: true,
+        unique: true
     },
     Correo: {
         type: String,
@@ -33,14 +34,16 @@ const ApoderadoSchema = new Schema({
     },
     Foto: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     InformacionRelevante: {
         type: String,
         required: true
     },
     Role:{
-        Type: ["admin"],
+        Type: ["admin" , "user"],
+        default: "user"
     }
 });
 

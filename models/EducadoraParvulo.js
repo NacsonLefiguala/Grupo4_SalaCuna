@@ -23,7 +23,8 @@ const EducadoraParvuloSchema = new Schema({
     },
     Telefono: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
     Correo: {
         type: String,
@@ -36,19 +37,8 @@ const EducadoraParvuloSchema = new Schema({
     },
     Foto: {
         type: String,
-        required: true
-    },
-    AsistenteParvulo: {
-        type: Schema.ObjectId,
-        ref: AsistenteParvulo
-    },
-    Apoderado: {
-        type: Schema.ObjectId,
-        ref: Apoderado
-    },
-    Parvulo: {
-        type: Schema.ObjectId,
-        ref: Parvulo
+        required: true,
+        unique: true
     },
     Role:{
         Type: ["admi"]

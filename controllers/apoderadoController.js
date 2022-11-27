@@ -62,6 +62,7 @@ const getApoderado = (req, res) => {
     });
 };
 
+//sin completar
 const validate = (req,res) => {
     if(!(!RutCadena(req.RUT) || !VerificadorRut(req.RUT.charAt(11)))){
         return res.status(400).send({ message: "Error: el rut esta mal escrito"})
