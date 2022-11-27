@@ -1,7 +1,7 @@
 const { check, validationResult } = require('express-validator');
 const ValidateResult = require('../helpers/ValidateHelpers')
 
-const ValidateCreate = [
+const ValidatorCreate = [
     check('NombreCompleto')
         .exists()
         .not()
@@ -50,4 +50,4 @@ const ValidateCreate = [
     }
 ];
 
-module.exports = ValidateCreate
+module.exports = ValidatorCreate

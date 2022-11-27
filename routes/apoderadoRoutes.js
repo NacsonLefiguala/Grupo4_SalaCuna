@@ -1,10 +1,10 @@
 const express = require('express');
 const api = express.Router();
 const ApoderadoController = require('../controllers/ApoderadoController');
-const ValidateCreate  = require('../validators/ApoderadoValidators')
+const ValidatorCreate  = require('../validators/ApoderadoValidators')
 
 
-api.post('/apoderado', ValidateCreate, ApoderadoController.createApoderado);
+api.post('/apoderado', ValidatorCreate, ApoderadoController.createApoderado);
 api.get('/apoderados', ApoderadoController.getApoderados);
 api.delete("/apoderado/:id", ApoderadoController.deleteApoderado);
 api.patch("/apoderado/:id", ApoderadoController.updateApoderado);
