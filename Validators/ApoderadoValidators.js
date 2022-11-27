@@ -17,11 +17,13 @@ const ValidateCreate = [
     .isEmail()
 
     (res, req) => {
+        ValidateResult(res,req)
         
-    }
+    
+    };
+];
+    module.exports = {ValidateCreate}
 
 
-}
 
 
-]
