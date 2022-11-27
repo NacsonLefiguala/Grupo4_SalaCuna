@@ -1,8 +1,9 @@
-const check = requiere ('express-validator')
-const ValidateResult = requiere  ('../helpers/ValidateHelper')
+const check = require ('express-validator')
+const ValidateResult = require  ('../helpers/ValidateHelpers')
+
 
 const ValidateCreate = [
-    check ('NombreCompleto')
+    check('NombreCompleto')
     .exists()
     .not()
     .isEmpty(),
@@ -14,13 +15,11 @@ const ValidateCreate = [
     .exists()
     .not()
     .isEmpty()
-    .isEmail()
+    .isEmail(),
 
-    (res, req) => {
-        ValidateResult(res,req)
-        
-    
-    };
+    (res, req, next) => {
+        ValidateResult(res,req, next)
+    }
 ];
     module.exports = {ValidateCreate}
 
