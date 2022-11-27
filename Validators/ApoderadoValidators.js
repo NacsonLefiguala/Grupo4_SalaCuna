@@ -28,8 +28,8 @@ const ValidateCreate = [
     check ('InformacionRelevante')
     .isEmpty(),
 
-    (res, req, next) => {
-        ValidateResult(res,req, next)
+    (err,res, req, next) => {
+        ValidateResult(err,res,req, next)
     }
 ];
 
