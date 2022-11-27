@@ -13,7 +13,7 @@ const ValidateCreate = [
     check ('Correo')
     .exists()
     .not()
-    .isEmpty(),
+    .isEmpty()
     .isEmail()
 
     (res, req) => {

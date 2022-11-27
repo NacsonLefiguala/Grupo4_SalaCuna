@@ -9,7 +9,17 @@ app.use(cors())
 app.use(express.json());
 app.options('*', cors());
 
-app.use("/api", require("./routes/allRoutes"));
+const ApoderadoRoutes = require('./routes/apoderadoRoutes');
+const AsistenciaRoutes = require('./routes/AsistenciaRoutes');
+const AsistenteParvuloRoutes = require('./routes/AsistenteParvuloRoutes');
+const EducadoraParvuloRoutes = require('./routes/EducadoraParvuloRoutes');
+const ParvuloRoutes = require('./routes/parvuloRoutes');
+
+app.use('/api' ,ApoderadoRoutes);
+app.use('/api' ,AsistenciaRoutes);
+app.use('/api' ,AsistenteParvuloRoutes);
+app.use('/api' ,EducadoraParvuloRoutes);
+app.use('/api' ,ParvuloRoutes);
 
 app.listen(process.env.PORT, () => {
 console.log('El servidor corre en el puerto ->', process.env.PORT)
