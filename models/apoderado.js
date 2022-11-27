@@ -41,9 +41,8 @@ const ApoderadoSchema = new Schema({
         type: String,
         required: true
     },
-    Role:{
-        Type: ["admin" , "user"],
-        default: "user"
+    Role: {
+        Type: ["admin", "user"],
     }
 });
 

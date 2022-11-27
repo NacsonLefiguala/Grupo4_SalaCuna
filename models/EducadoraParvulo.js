@@ -40,8 +40,8 @@ const EducadoraParvuloSchema = new Schema({
         required: true,
         unique: true
     },
-    Role:{
-        Type: ["admi"]
+    Role: {
+        Type: ["admin"]
     }
 });
 

@@ -15,6 +15,14 @@ const ValidateCreate = [
     check('FechaNacimiento')
         .exists()
         .isDate()
+        .custom((value, { req }) => {
+            let FechaActual = new Date.now();
+            let edad = FechaActual.getFullYear() - value.getFullYear();
+            if (edad < 1) {
+                throw new Error('Edad no valida')
+            }
+            return true
+        })
         .not()
         .isEmpty(),
     check('Domicilio')
