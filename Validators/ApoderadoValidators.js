@@ -3,10 +3,7 @@ const ValidateResult = require('../helpers/ValidateHelpers')
 
 const ValidatorCreate = [
     check('NombreCompleto')
-        .exists()
-        .not()
-        .isString()
-        .isEmpty(),
+        .isString(),
     check('RUT')
         .exists()
         .not()
@@ -37,7 +34,7 @@ const ValidatorCreate = [
         .exists()
         .not()
         .isEmpty()
-        .isEmail(),
+        .normalizeEmail().isEmail(),
     check('Parentezco')
         .isEmpty(),
     check('Foto')
@@ -51,6 +48,7 @@ const ValidatorCreate = [
          ValidateResult(err, res, req, next)
     }
 ];
+
 
 module.exports = ValidatorCreate
 

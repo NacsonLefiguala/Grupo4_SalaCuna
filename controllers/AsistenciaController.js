@@ -1,12 +1,14 @@
 const Asistencia = require('../models/Asistencia');
 
 const createAsistencia = (req, res) =>{
+    const body = MatchedData(req)
     const {Sala, FechaClase, Actividad} = req.body;
     const newAsistencia = new Asistencia({
         Sala,
         FechaClase,
         Actividad
     });
+    Asistencia.create(body)
     newAsistencia.save((err, asistencia) =>{
         if(err){
             return res.status(400).send({message: "Error al crear la asistencia" ,err})

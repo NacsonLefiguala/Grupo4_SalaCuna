@@ -1,6 +1,7 @@
 const EducadoraParvulo = require('../models/EducadoraParvulo');
 
 const createEducadoraParvulo = (req, res) => {
+    const body = MatchedData(req)
     const { NombreCompleto, Rut, FechaDeNacimiento, Domicilio, Telefono, Correo, Foto, InformacionRelevante} = req.body;
     const newEducadoraParvulo = new EducadoraParvulo({
         NombreCompleto,
@@ -12,6 +13,7 @@ const createEducadoraParvulo = (req, res) => {
         Foto,
         InformacionRelevante
     });
+    EducadoraParvulo.create(body)
     newEducadoraParvulo.save((err, educadoraparvulo) => {
         if (err) {
             return res.status(400).send({ message: "Error al crear educadora parvulo", err})

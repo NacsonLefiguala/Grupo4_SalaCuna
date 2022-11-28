@@ -42,7 +42,7 @@ const ApoderadoSchema = new Schema({
         required: true
     },
     Role: {
-        Type: "user"
+        Type: ["user"]
     }
 });
 

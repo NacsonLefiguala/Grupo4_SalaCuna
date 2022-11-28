@@ -1,7 +1,9 @@
 const Apoderado = require('../models/Apoderado');
+const MatchedData = require('express-validator');
 
 
 const createApoderado = (req, res) => {
+    const body = MatchedData(req)
     const { NombreCompleto, RUT, FechaDeNacimiento, Domicilio, Telefono, Correo, Parentezco, Foto, InformacionRelevante } = req.body;
     const newApoderado = new Apoderado({
         NombreCompleto,
@@ -14,7 +16,7 @@ const createApoderado = (req, res) => {
         Foto,
         InformacionRelevante
     });
-    validate(req,res)
+    Apoderado.create(body)
     newApoderado.save((err, Apoderado) => {
         if (err) {
             return res.status(400).send({ message: "Error al crear el apoderado", err})

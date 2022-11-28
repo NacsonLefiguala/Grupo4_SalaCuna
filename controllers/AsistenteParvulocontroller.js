@@ -1,6 +1,7 @@
 const AsistenteParvulo = require('../models/AsistenteParvulo');
 
 const createAsistenteParvulo = (req, res) => {
+    const body = MatchedData(req)
     const { NombreCompleto, FechaDeNacimiento, Domicilio, Rut, Telefono, Correo, InformacionRelevante, Foto } = req.body;
     const newAsistenteParvulo = new AsistenteParvulo({
         NombreCompleto,
@@ -12,6 +13,7 @@ const createAsistenteParvulo = (req, res) => {
         InformacionRelevante,
         Foto
     });
+    AsistenteParvulo.create(body)
     newAsistenteParvulo.save((err, AsistenteParvulo) => {
         if (err) {
             return res.status(400).send({ message: "Error al crear el Asistente parvulo", err })

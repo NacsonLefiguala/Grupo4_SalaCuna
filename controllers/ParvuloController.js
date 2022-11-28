@@ -2,6 +2,7 @@ const { findById } = require('../models/Parvulo');
 const Parvulo = require('../models/Parvulo');
 
 const createParvulo = (req, res) => {
+    const body = MatchedData(req)
     const { NombreCompleto, RUT, FechaDeNacimiento, Domicilio, InformacionRelevante, Foto} = req.body;
     const newParvulo = new Parvulo({
         NombreCompleto,
@@ -11,6 +12,7 @@ const createParvulo = (req, res) => {
         InformacionRelevante,
         Foto
     });
+    Parvulo.create(body)
     newParvulo.save((err, Parvulo) => {
         if (err) {
             return res.status(400).send({ message: "Error al crear el parvulo", err})
