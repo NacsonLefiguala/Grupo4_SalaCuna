@@ -38,7 +38,7 @@ const AsistenteParvuloSchema = new Schema({
         unique: true
     },
     Role: {
-        Type: ["admin", "user"],
+        Type: "user"
     }
 });
 

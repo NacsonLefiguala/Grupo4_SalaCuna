@@ -4,9 +4,18 @@ const cors = require('cors');
 require('dotenv').config();
 const app = express();
 
+function isAdmin(req, res, next) {
+    if (req.body.isAdmin) {
+        next();
+    } else {
+        res.status(403).send(`Acceso denegado ${req.url}`);
+    }
+}
+
 app.use(cors())
 app.use(express.json());
 app.options('*', cors());
+app.use(isAdmin);
 
 const ApoderadoRoutes = require('./routes/apoderadoRoutes');
 const AsistenciaRoutes = require('./routes/AsistenciaRoutes');
