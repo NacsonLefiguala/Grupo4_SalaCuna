@@ -12,3 +12,4 @@ api.patch("/apoderado/:id", ApoderadoController.updateApoderado);
 api.get('/apoderado/:id', ApoderadoController.getApoderado);
 
 module.exports = api;
+
