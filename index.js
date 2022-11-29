@@ -17,7 +17,7 @@ app.use(express.json());
 app.options('*', cors());
 //app.use(isAdmin); 
 
-const ApoderadoRoutes = require('./routes/apoderadoRoutes');
+const ApoderadoRoutes = require('./routes/ApoderadoRoutes');
 const AsistenciaRoutes = require('./routes/AsistenciaRoutes');
 const AsistenteParvuloRoutes = require('./routes/AsistenteParvuloRoutes');
 const EducadoraParvuloRoutes = require('./routes/EducadoraParvuloRoutes');

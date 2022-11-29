@@ -1,7 +1,7 @@
 const express = require('express');
 const api = express.Router();
 const customHeader = require('../middleware/customHeader')
-const ApoderadoController = require('../controllers/apoderadoController');
+const ApoderadoController = require('../controllers/ApoderadoController');
 const ValidatorCreate = require('../validators/ApoderadoValidators')
 
 
