@@ -1,5 +1,5 @@
 const { check, validationResult } = require('express-validator');
-const ValidateResult = require('../helpers/ValidateHelpers')
+const ValidateResult = require('../Helpers/ValidateHelpers')
 
 const ValidatorCreate = [
     check('NombreCompleto')
