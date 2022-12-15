@@ -60,7 +60,7 @@ const EducadoraParvulo = () => {
                     <Input type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} />
                 </FormControl>
             </Stack>
-            <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbit} > Crear </Button>
+            <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Crear </Button>
         </Container>
     )
 }
