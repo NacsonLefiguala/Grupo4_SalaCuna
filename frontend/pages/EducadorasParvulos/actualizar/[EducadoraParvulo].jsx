@@ -18,7 +18,7 @@ export const getServerSideProps = async (context) => {
 
 const editar = ({ data }) => {
     cconst[EducadoraParvulo, setEducadoraParvulo] = UseState(data)
-    const router = useRouter()
+    const router = UseRouter()
     const { EducadoraParvulo } = router.query
 
     const handleChange = (e) => {
