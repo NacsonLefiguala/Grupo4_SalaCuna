@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormLabel, FormControl, Input } from '@chakra-ui/react'
 
-const InputImage = ({ label, name, src, alt, handleChange, value }) => {
+const InputImage = ({ label, type, name, src, alt, handleChange, value }) => {
     return (
         <FormControl id={name}>
             <FormLabel> {label} </FormLabel>

@@ -2,7 +2,7 @@ const EducadoraParvulo = require('../models/EducadoraParvulo');
 
 const createEducadoraParvulo = (req, res) => {
     const body = MatchedData(req)
-    const { NombreCompleto, Rut, FechaDeNacimiento, Domicilio, Telefono, Correo, Foto, InformacionRelevante} = req.body;
+    const { NombreCompleto, Rut, FechaDeNacimiento, Domicilio, Telefono, Correo, Foto, InformacionRelevante } = req.body;
     const newEducadoraParvulo = new EducadoraParvulo({
         NombreCompleto,
         Rut,
@@ -16,7 +16,7 @@ const createEducadoraParvulo = (req, res) => {
     EducadoraParvulo.create(body)
     newEducadoraParvulo.save((err, educadoraparvulo) => {
         if (err) {
-            return res.status(400).send({ message: "Error al crear educadora parvulo", err})
+            return res.status(400).send({ message: "Error al crear educadora parvulo", err })
         }
         return res.status(200).send(educadoraparvulo)
     });
@@ -43,12 +43,12 @@ const getSpecificEducadoraParvulo = (req, res) => {
 
 const updateEducadoraParvulo = (req, res) => {
     EducadoraParvulo.findByIdAndUpdate(req.params.id, req.body)
-    .then(function () {
-        res.json("Se actualizo el educadora de parvulo");
-    })
-    .catch(function (err) {
-        res.status(422).send("Error al actualizar educadora de parvulo.");
-    });
+        .then(function () {
+            res.json("Se actualizo el educadora de parvulo");
+        })
+        .catch(function (err) {
+            res.status(422).send("Error al actualizar educadora de parvulo.");
+        });
 };
 
 const deleteEducadoraParvulo = (req, res) => {
@@ -60,8 +60,12 @@ const deleteEducadoraParvulo = (req, res) => {
         if (!educadoraparvulo) {
             return res.status(404).send({ message: "Educadora Parvulo no encontrado" })
         }
-        return res.status(200).send( educadoraparvulo)
+        return res.status(200).send(educadoraparvulo)
     });
+}
+
+const login = (req, res) => {
+    return res.status(200).send({ message: "Inicio de Sesion exitosa" })
 }
 
 module.exports = {
@@ -69,5 +73,6 @@ module.exports = {
     getEducadoraParvulos,
     getSpecificEducadoraParvulo,
     updateEducadoraParvulo,
-    deleteEducadoraParvulo
+    deleteEducadoraParvulo,
+    login
 }

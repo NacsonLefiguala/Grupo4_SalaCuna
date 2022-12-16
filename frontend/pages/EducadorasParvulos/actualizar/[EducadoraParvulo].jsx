@@ -1,4 +1,4 @@
-import { UseState } from 'react'
+import { useState, UseState } from 'react'
 import { getEducadoraParvulo, updateEducadoraParvulo } from '../../../data/EducadoraParvulos'
 import { Button, Container, Heading, HStack, Stack } from '@chakra-ui/react'
 import InputForm from '../../../components/InputForm'
@@ -16,6 +16,7 @@ export const getServerSideProps = async (context) => {
     }
 }
 
+
 const editar = ({ data }) => {
     cconst[EducadoraParvulo, setEducadoraParvulo] = UseState(data)
     const router = UseRouter()
@@ -30,7 +31,7 @@ const editar = ({ data }) => {
 
     const sumbitEducadoraParvulo = async (e) => {
         e.preventdefault()
-        const response = await updateEducadoraParvulo(EducadoraParvulo)
+        const response = await updateEducadoraParvulo(EducadoraParvulo, EducadoraParvulo)
         if (response.status == 200) {
             Swal.fire({
                 icon: 'succes',
@@ -61,11 +62,11 @@ const editar = ({ data }) => {
                 <TextAreaInput label="telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="tel" value={EducadoraParvulo.Telefono} />
                 <TextAreaInput label="correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
                 <InputImage label="foto" type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} value={EducadoraParvulo.Foto} />
-                <TextAreaInput label="informacionrelevante" name="informacionrelevante" type="text" placeholder="observaciones acerca de los parvulos, observaciones de situaciones relacionadas a parvulos (por ejemplo que nadie fue a buscar al parvulo), actividades u objetivos del día, observaciones relacionadas a parvulos en las actividades (si un parvulo tiene alguna diferencia a la hora de realizar actividades), entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
+                <TextAreaInput label="informacionrelevante" name="informacionrelevante" type="text" placeholder="observacion sobre parvulos,situaciones de parvulos, actividades u objetvos, entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
             </Stack>
             <HStack>
                 <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Editar Educadora de Parvulo </Button>
-                <Button colorScheme="Blue" mt={10} mb={10} onClick={() => router.puah('EducadoraParvulos')}> Cancelar </Button>
+                <Button colorScheme="Blue" mt={10} mb={10} onClick={() => router.push('/')}> Cancelar </Button>
             </HStack>
         </Container>
     )

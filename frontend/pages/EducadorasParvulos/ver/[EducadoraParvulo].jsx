@@ -7,7 +7,7 @@ import ShowInfo from '../../../components/ShowInfo'
 export const getServerSideProps = async (context) => {
     try {
         const response = await getEducadoraParvulo(context.query.EducadoraParvulo, localStorage.getItem('token'))
-        if (response.status === 200) {
+        if (response.status == 200) {
             return {
                 props: {
                     data: response.data
@@ -48,9 +48,9 @@ const editar = ({ data }) => {
                 <ShowInfo value={EducadoraParvulo.InformacionRelevante} color={"blue.300"} tag={"InformacionRelevante"} />
             </Stack>
             <HStack >
-                <Button w={"full"} colorScheme="blue" mt={10} mb={10}>Editar</Button>
-                <Button w={"full"} colorScheme="red" mt={10} mb={10}>Eliminar</Button>
-                <Button w={"full"} colorScheme="green" mt={10} mb={10} onClick={() => router.push("/")}>Volver</Button>
+                <Button w={"full"} colorScheme="blue" mt={10} mb={10}> Editar </Button>
+                <Button w={"full"} colorScheme="red" mt={10} mb={10}> Eliminar </Button>
+                <Button w={"full"} colorScheme="green" mt={10} mb={10} onClick={() => router.push("/")}> Volver </Button>
             </HStack>
         </Container>
     )
