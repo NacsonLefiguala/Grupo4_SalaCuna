@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
-import InputStack from '../components/InputStack'
-import { Button, Container, Heading, HStack, Input, Stack, Table, Thead, Tr, Td, Th, Tbody } from '@chakra-ui/react'
+import { UseState, UseEffect } from 'react'
+import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody } from '@chakra-ui/react'
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
-import { useRouter } from 'next/router'
+import { UseRouter } from 'next/router'
 
 const index = () => {
-  const [EducadoraParvulos, setEducadoraParvulos] = useState([{
+  const [EducadoraParvulos, setEducadoraParvulos] = UseState([{
     NombreCompleto: '',
     Rut: '',
     FechaDeNacimiento: '',
@@ -16,7 +15,7 @@ const index = () => {
     InformacionRelevante: ''
   }])
 
-  const router = useRouter()
+  const router = UseRouter()
 
   const contentTable = () => {
     return EducadoraParvulos.map(EducadoraParvulo => {
@@ -30,13 +29,18 @@ const index = () => {
           <Td>{EducadoraParvulo.Correo}</Td>
           <Td>{EducadoraParvulo.Foto}</Td>
           <Td>{EducadoraParvulo.InformacionRelevante}</Td>
-          <Td><Button onClick={() => router.push(`./EducadoraParvulos/${EducadoraParvulo.id}`)}> Editar </Button></Td>
+          <Td>
+            <HStack>
+              <Button colorScheme={'orange'} onClick={() => router.push(`./EducadoraParvulos/ver/${EducadoraParvulo.id}`)}> Ver </Button>
+              <Button colorScheme={'teal'} onClick={() => router.push(`./EducadoraParvulos/actualizar/${EducadoraParvulo.id}`)}> Editar </Button>
+            </HStack>
+          </Td>
         </Tr>
       )
     })
   }
 
-  useEffect(() => {
+  UseEffect(() => {
     getEducadoraParvulos().then(res => {
       setEducadoraParvulos(res.data)
     })

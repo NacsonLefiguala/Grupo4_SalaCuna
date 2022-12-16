@@ -1,8 +1,13 @@
 import { useState } from 'react'
-import { Button, Container, Heading, HStack, Input, Stack, FormControl, FormLabel } from '@chakra-ui/react'
+import { Button, Container, Heading, Stack } from '@chakra-ui/react'
 import { createEducadoraParvulo } from '../data/EducadoraParvulos'
+import TextAreaInput from '../components/TextAreaInput'
+import InputForm from '../components/InputForm'
+import InputImage from '../components/InputImage'
+import { useRouter } from 'next/router'
+
 const EducadoraParvulo = () => {
-    const [EducadoraParvulos, setEducadoraParvulos] = useState([{
+    const [EducadoraParvulo, setEducadoraParvulos] = useState([{
         NombreCompleto: '',
         Rut: '',
         FechaDeNacimiento: '',
@@ -12,6 +17,8 @@ const EducadoraParvulo = () => {
         Foto: '',
         InformacionRelevante: ''
     }])
+
+    const router = useRouter()
 
     const handleChange = (e) => {
         setEducadoraParvulos({
@@ -31,36 +38,18 @@ const EducadoraParvulo = () => {
         <Container maxW="container.xl" mt={10}>
             <Heading as={"h1"} size={"2x1"} textAlign={"center"}> Crear Educadora de Parvulo </Heading>
             <Stack>
-                <FormControl id="NombreCompleto">
-                    <FormLabel> Nombre Completo </FormLabel>
-                    <Input name="nombreCompleto" type="text" placeholder="Juanito Alcachofa Peréz" onChange={handleChange} />
-                </FormControl>
-                <FormControl id="Rut">
-                    <FormLabel> RUT </FormLabel>
-                    <Input name="rut" type="text" placeholder="xx.xxx.xxx-x" onChange={handleChange} />
-                </FormControl>
-                <FormControl id="FechaDeNacimiento">
-                    <FormLabel> Fecha Nacimiento </FormLabel>
-                    <Input type="date" name="FechaNacimiento" value="2022-12-14" min="2021-01-01" max="2022-12-14" onChange={handleChange} />
-                </FormControl>
-                <FormControl id="Domicilio">
-                    <FormLabel> Domicilio </FormLabel>
-                    <Input name="Domicilio" type="text" placeholder="Victor Lamas 1177, Concepcion" onChange={handleChange} />
-                </FormControl>
-                <FormControl id="Telefono">
-                    <FormLabel> Telefono </FormLabel>
-                    <Input type="tel" name="telefono" placeholder="(Numero verficador) Telefono" onChange={handleChange} />
-                </FormControl>
-                <FormControl id="Correo">
-                    <FormLabel> Correo </FormLabel>
-                    <Input name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} />
-                </FormControl>
-                <FormControl id="Foto">
-                    <FormLabel> Foto </FormLabel>
-                    <Input type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} />
-                </FormControl>
+                <TextAreaInput label="NombreCompleto" handleChange={handleChange} name="name" placeholder="Juanito Alcachofa Peréz" type="text" value={EducadoraParvulo.NombreCompleto} />
+                <TextAreaInput label="Rut" handleChange={handleChange} name="rut" placeholder="xx.xxx.xxx-x" type="text" value={EducadoraParvulo.Rut} />
+                <InputForm type="date" name="FechaNacimiento" value={EducadoraParvulo.FechaDeNacimiento} min="2021-01-01" max="2022-12-14" handleChange={handleChange} />
+                <TextAreaInput label="Domicilio" handleChange={handleChange} name="Domicilio" placeholder="Victor Lamas 1177, Concepcion" type="text" value={EducadoraParvulo.Domicilio} />
+                <TextAreaInput label="telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="tel" value={EducadoraParvulo.Telefono} />
+                <TextAreaInput label="correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
+                <InputImage label="foto" type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} value={EducadoraParvulo.Foto} />
             </Stack>
-            <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Crear </Button>
+            <HStack>
+                <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Crear </Button>
+                <Button colorScheme="Blue" mt={10} mb={10} onClick={() => router.puah('EducadoraParvulos')}> Cancelar </Button>
+            </HStack>
         </Container>
     )
 }

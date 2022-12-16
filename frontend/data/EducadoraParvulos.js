@@ -13,12 +13,18 @@ const createEducadoraParvulo = () => {
 }
 
 const getEducadoraParvulo = async (id) => {
-    const response = await axios.get(`${process.env.SERVIDOR}/EducadoraParvulo/search/${id.EducadoraParvulo}`)
+    const response = await axios.get(`${process.env.SERVIDOR}/EducadoraParvulo/${id.EducadoraParvulo}`)
+    return response
+}
+
+const updateEducadoraParvulo = async (id, EducadoraParvulo) => {
+    const response = await axios.put(`${process.env.SERVIDOR}/EducadoraParvulo/${id.EducadoraParvulo}`, EducadoraParvulo)
     return response
 }
 
 module.exports = {
     getEducadoraParvulos,
     createEducadoraParvulo,
-    getEducadoraParvulo
+    getEducadoraParvulo,
+    updateEducadoraParvulo
 }
