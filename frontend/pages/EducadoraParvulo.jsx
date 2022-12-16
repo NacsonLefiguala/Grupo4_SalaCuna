@@ -45,6 +45,7 @@ const EducadoraParvulo = () => {
                 <TextAreaInput label="telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="tel" value={EducadoraParvulo.Telefono} />
                 <TextAreaInput label="correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
                 <InputImage label="foto" type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} value={EducadoraParvulo.Foto} />
+                <TextAreaInput label="informacionrelevante" name="informacionrelevante" type="text" placeholder="observaciones acerca de los parvulos, observaciones de situaciones relacionadas a parvulos (por ejemplo que nadie fue a buscar al parvulo), actividades u objetivos del día, observaciones relacionadas a parvulos en las actividades (si un parvulo tiene alguna diferencia a la hora de realizar actividades), entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
             </Stack>
             <HStack>
                 <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Crear </Button>

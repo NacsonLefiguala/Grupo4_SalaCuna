@@ -45,6 +45,7 @@ const editar = ({ data }) => {
                 <ShowInfo value={EducadoraParvulo.Telefono} color={"blue.300"} tag={"Telefono"} />
                 <ShowInfo value={EducadoraParvulo.Correo} color={"blue.300"} tag={"Correo"} />
                 <ShowInfo value={EducadoraParvulo.Foto} color={"blue.300"} tag={"Foto"} />
+                <ShowInfo value={EducadoraParvulo.InformacionRelevante} color={"blue.300"} tag={"InformacionRelevante"} />
             </Stack>
             <HStack >
                 <Button w={"full"} colorScheme="blue" mt={10} mb={10}>Editar</Button>

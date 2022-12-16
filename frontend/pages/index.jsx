@@ -1,10 +1,10 @@
-import { UseState, UseEffect } from 'react'
+import { useState, UseEffect } from 'react'
 import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody } from '@chakra-ui/react'
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
 import { UseRouter } from 'next/router'
 
 const index = () => {
-  const [EducadoraParvulos, setEducadoraParvulos] = UseState([{
+  const [EducadoraParvulos, setEducadoraParvulos] = useState([{
     NombreCompleto: '',
     Rut: '',
     FechaDeNacimiento: '',
