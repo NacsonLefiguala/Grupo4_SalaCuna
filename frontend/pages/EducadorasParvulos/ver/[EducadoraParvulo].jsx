@@ -1,4 +1,4 @@
-import { UseState } from 'react'
+import { useState } from 'react'
 import { getEducadoraParvulo } from '../../../data/EducadoraParvulos'
 import { Button, Container, Heading, HStack, Stack } from '@chakra-ui/react'
 import { UseRouter } from 'next/router'

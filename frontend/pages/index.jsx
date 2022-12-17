@@ -6,7 +6,7 @@ import user from '../data/user'
 import { login } from '../data/user'
 
 const index = () => {
-  const [rut, setRut] = useState('')
+  const [rut, setRut] = useState('') 
   const router = useRouter()
 
   const handleChange = (e) => {
