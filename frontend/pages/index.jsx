@@ -1,4 +1,4 @@
-import { UseState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody, Input, FormControl, FormLabel } from '@chakra-ui/react'
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
 import Router, { useRouter } from 'next/router'
@@ -6,7 +6,7 @@ import user from '../data/user'
 import { login } from '../data/user'
 
 const index = () => {
-  const [rut, setRut] = UseState('')
+  const [rut, setRut] = useState('')
   const router = useRouter()
 
   const handleChange = (e) => {
