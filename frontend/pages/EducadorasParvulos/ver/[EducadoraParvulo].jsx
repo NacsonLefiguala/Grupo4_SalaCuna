@@ -48,11 +48,11 @@ const editar = ({ data }) => {
                 <ShowInfo value={EducadoraParvulo.InformacionRelevante} color={"blue.300"} tag={"InformacionRelevante"} />
             </Stack>
             <HStack >
-                <Button w={"full"} colorScheme="blue" mt={10} mb={10}> Editar </Button>
+                <Button w={"full"} colorScheme="blue" mt={10} mb={10} onClick={() => router.push('./EducadoraParvulo/actualizar/')}> Editar </Button>
                 <Button w={"full"} colorScheme="red" mt={10} mb={10}> Eliminar </Button>
                 <Button w={"full"} colorScheme="green" mt={10} mb={10} onClick={() => router.push("/")}> Volver </Button>
             </HStack>
-        </Container>
+        </Container >
     )
 }
 

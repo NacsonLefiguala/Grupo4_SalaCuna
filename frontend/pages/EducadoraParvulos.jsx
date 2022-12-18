@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Button, Container, Heading, HStack, Input, Stack, Table, Thead, Tr, Td, Th, Tbody } from '@chakra-ui/react'
+import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody } from '@chakra-ui/react'
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
 import { useRouter } from 'next/router'
 
@@ -51,7 +51,7 @@ const EducadoraParvulos = () => {
         <>
             <Container maxW="container.xl">
                 <Heading as="h1" size="2xl" textAlign="center" mt="10"> Listado de Educadoras de Parvulo </Heading>
-                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadoraParvulos/crear')}> Agregar Educadora Parvulo </Button>
+                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadoraParvulo/crear')}> Agregar Educadora Parvulo </Button>
                 <Stack spacing={4} mt="10">
                     <Table variant="simple">
                         <Thead>

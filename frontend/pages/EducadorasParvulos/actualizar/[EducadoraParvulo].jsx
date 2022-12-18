@@ -1,4 +1,4 @@
-import { useState, UseState } from 'react'
+import { useState } from 'react'
 import { getEducadoraParvulo, updateEducadoraParvulo } from '../../../data/EducadoraParvulos'
 import { Button, Container, Heading, HStack, Stack } from '@chakra-ui/react'
 import InputForm from '../../../components/InputForm'
@@ -15,7 +15,6 @@ export const getServerSideProps = async (context) => {
         }
     }
 }
-
 
 const editar = ({ data }) => {
     const [EducadoraParvulo, setEducadoraParvulo] = useState(data)

@@ -1,7 +1,7 @@
 const EducadoraParvulo = require('../models/EducadoraParvulo')
 
 const chechRut = (req, res, next) => {
-    EducadoraParvulo.findOne({ rut: req.body.rut }, (err, EducadoraParvulo) => {
+    EducadoraParvulo.findOne({ rut: req.body.Rut }, (err, EducadoraParvulo) => {
         if (err) {
             return res.status(400).send({ message: "Error al obtneer usuario" })
         }
