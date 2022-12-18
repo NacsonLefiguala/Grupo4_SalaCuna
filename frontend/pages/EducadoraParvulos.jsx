@@ -3,9 +3,9 @@ import { Button, Container, Heading, HStack, Input, Stack, Table, Thead, Tr, Td,
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
 import { useRouter } from 'next/router'
 
-const productos = () => {
+const EducadoraParvulos = () => {
 
-    const [EducadoraParvulo, setEducadoraParvulos] = useState([{
+    const [EducadoraParvulos, setEducadoraParvulos] = useState([{
         NombreCompleto: '',
         Rut: '',
         FechaDeNacimiento: '',
@@ -18,7 +18,7 @@ const productos = () => {
     const router = useRouter()
 
     const contentTable = () => {
-        return EducadoraParvulo.map(EducadoraParvulo => {
+        return EducadoraParvulos.map(EducadoraParvulo => {
             return (
                 <Tr key={EducadoraParvulo._id}>
                     <Td>{EducadoraParvulo.NombreCompleto}</Td>
@@ -51,7 +51,7 @@ const productos = () => {
         <>
             <Container maxW="container.xl">
                 <Heading as="h1" size="2xl" textAlign="center" mt="10"> Listado de Educadoras de Parvulo </Heading>
-                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadoraParvulo/crear')}>Agregar Educadora de Parvulo </Button>
+                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadoraParvulos/crear')}> Agregar Educadora Parvulo </Button>
                 <Stack spacing={4} mt="10">
                     <Table variant="simple">
                         <Thead>
@@ -76,4 +76,4 @@ const productos = () => {
     )
 }
 
-export default productos
+export default EducadoraParvulos

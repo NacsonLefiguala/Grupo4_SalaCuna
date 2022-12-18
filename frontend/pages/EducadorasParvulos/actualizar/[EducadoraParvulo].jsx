@@ -4,7 +4,7 @@ import { Button, Container, Heading, HStack, Stack } from '@chakra-ui/react'
 import InputForm from '../../../components/InputForm'
 import InputImage from '../../../components/InputImage'
 import TextAreaInput from '../../../components/TextAreaInput'
-import { UseRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import Swal from 'sweetalert2'
 
 export const getServerSideProps = async (context) => {
@@ -18,9 +18,9 @@ export const getServerSideProps = async (context) => {
 
 
 const editar = ({ data }) => {
-    cconst[EducadoraParvulo, setEducadoraParvulo] = UseState(data)
-    const router = UseRouter()
-    const { EducadoraParvulo } = router.query
+    const [EducadoraParvulo, setEducadoraParvulo] = useState(data)
+    const router = useRouter()
+    const { Educadoraparvulo } = router.query
 
     const handleChange = (e) => {
         setEducadoraParvulo({
@@ -31,7 +31,7 @@ const editar = ({ data }) => {
 
     const sumbitEducadoraParvulo = async (e) => {
         e.preventdefault()
-        const response = await updateEducadoraParvulo(EducadoraParvulo, EducadoraParvulo)
+        const response = await updateEducadoraParvulo(Educadoraparvulo, EducadoraParvulo)
         if (response.status == 200) {
             Swal.fire({
                 icon: 'succes',
