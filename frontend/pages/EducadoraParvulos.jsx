@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import { Button, Container, Heading, Stack, HStack } from '@chakra-ui/react'
-import { createEducadoraParvulo } from '../data/EducadoraParvulos'
-import TextAreaInput from '../components/TextAreaInput'
-import InputForm from '../components/InputForm'
-import InputImage from '../components/InputImage'
+import { useState, useEffect } from 'react'
+import { Button, Container, Heading, HStack, Input, Stack, Table, Thead, Tr, Td, Th, Tbody } from '@chakra-ui/react'
+import { getEducadoraParvulos } from '../data/EducadoraParvulos'
 import { useRouter } from 'next/router'
 
-const EducadoraParvulos = () => {
+const productos = () => {
+
     const [EducadoraParvulo, setEducadoraParvulos] = useState([{
         NombreCompleto: '',
         Rut: '',
@@ -17,44 +15,65 @@ const EducadoraParvulos = () => {
         Foto: '',
         InformacionRelevante: ''
     }])
-
     const router = useRouter()
 
-    const handleChange = (e) => {
-        setEducadoraParvulos({
-            ...EducadoraParvulo,
-            [e.target.name]: e.target.value
+    const contentTable = () => {
+        return EducadoraParvulo.map(EducadoraParvulo => {
+            return (
+                <Tr key={EducadoraParvulo._id}>
+                    <Td>{EducadoraParvulo.NombreCompleto}</Td>
+                    <Td>{EducadoraParvulo.Rut}</Td>
+                    <Td>{EducadoraParvulo.FechaNacimiento}</Td>
+                    <Td>{EducadoraParvulo.Domicilio}</Td>
+                    <Td>{EducadoraParvulo.Telefono}</Td>
+                    <Td>{EducadoraParvulo.Correo}</Td>
+                    <Td>{EducadoraParvulo.Foto}</Td>
+                    <Td>{EducadoraParvulo.InformacionRelevante}</Td>
+                    <Td>
+                        <HStack>
+                            <Button colorScheme={"orange"} onClick={() => router.push(`./EducadoraParvulo/ver/${EducadoraParvulo._id}`)}>Ver</Button>
+                            <Button colorScheme={"teal"} onClick={() => router.push(`./EducadoraParvulo/actualizar/${EducadoraParvulo._id}`)}>Editar</Button>
+                        </HStack>
+                    </Td>
+                </Tr>
+            )
         })
     }
 
-    const sumbitEducadoraParvulo = (e) => {
-        e.preventdefault()
-        createEducadoraParvulo(EducadoraParvulo).then(res => {
-            console.log(res.data.name)
+    useEffect(() => {
+        getEducadoraParvulos().then(res => {
+            setEducadoraParvulos(res.data)
         })
-    }
+    }, [])
+
 
     return (
-        <Container maxW="container.xl" mt={10}>
-            <Heading as={"h1"} size={"2x1"} textAlign={"center"}> Crear Educadora de Parvulo </Heading>
-            <Stack>
-                <TextAreaInput label="Nombre Completo" handleChange={handleChange} name="name" placeholder="Juanito Alcachofa Peréz" type="text" value={EducadoraParvulo.NombreCompleto} />
-                <HStack>
-                    <TextAreaInput label="Rut" handleChange={handleChange} name="rut" placeholder="xx.xxx.xxx-x" type="text" value={EducadoraParvulo.Rut} />
-                    <InputForm label="Fecha de Nacimiento" type="date" name="Fecha de Nacimiento" value={EducadoraParvulo.FechaDeNacimiento} min="2021-01-01" max="2022-12-14" handleChange={handleChange} />
-                </HStack>
-                <TextAreaInput label="Domicilio" handleChange={handleChange} name="Domicilio" placeholder="Victor Lamas 1177, Concepcion" type="text" value={EducadoraParvulo.Domicilio} />
-                <TextAreaInput label="Telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="tel" value={EducadoraParvulo.Telefono} />
-                <TextAreaInput label="Correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
-                <InputImage label="Foto" type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} value={EducadoraParvulo.Foto} />
-                <TextAreaInput label="informacion Relevante" name="informacionrelevante" type="text" placeholder="observacion sobre parvulos,situaciones de parvulos, actividades u objetvos, entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
-            </Stack>
-            <HStack>
-                <Button colorScheme="red" mt={10} mb={10} onClick={() => router.push('/')}> Cancelar </Button>
-                <Button colorScheme="blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Crear </Button>
-            </HStack>
-        </Container>
+        <>
+            <Container maxW="container.xl">
+                <Heading as="h1" size="2xl" textAlign="center" mt="10"> Listado de Educadoras de Parvulo </Heading>
+                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadoraParvulo/crear')}>Agregar Educadora de Parvulo </Button>
+                <Stack spacing={4} mt="10">
+                    <Table variant="simple">
+                        <Thead>
+                            <Tr>
+                                <Td>Nombre Completo</Td>
+                                <Td>Rut</Td>
+                                <Td>Fecha De Nacimiento</Td>
+                                <Td>Telefono</Td>
+                                <Td>Correo</Td>
+                                <Td>Foto</Td>
+                                <Td>Informacion Relevante</Td>
+                            </Tr>
+                        </Thead>
+                        <Tbody>
+                            {contentTable()}
+                        </Tbody>
+                    </Table>
+                </Stack>
+            </Container>
+        </>
+
     )
 }
 
-export default EducadoraParvulos
+export default productos

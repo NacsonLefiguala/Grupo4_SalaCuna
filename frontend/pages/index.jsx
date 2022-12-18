@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody, Input, FormControl, FormLabel } from '@chakra-ui/react'
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 import user from '../data/user'
 import { login } from '../data/user'
 
 const index = () => {
-  const [rut, setRut] = useState('') 
+  const [rut, setRut] = useState('')
   const router = useRouter()
 
   const handleChange = (e) => {
@@ -18,7 +18,7 @@ const index = () => {
     const response = await login(rut)
     if (response.status == 200) {
       localStorage.setItem('token', rut)
-      router.push('./EducadorasParvulos')
+      router.push('./EducadoraParvulos')
     }
   }
 
@@ -31,7 +31,7 @@ const index = () => {
             <FormLabel> Rut del usuario </FormLabel>
             <Input onChange={handleChange} />
           </FormControl>
-          <Button onClick={onSumbit}> Ingresar </Button>
+          <Button colorScheme="green" onClick={onSumbit}> Ingresar </Button>
         </Stack>
       </Container>
     </>

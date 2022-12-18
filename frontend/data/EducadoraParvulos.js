@@ -1,5 +1,4 @@
 import axios from "axios";
-import EducadoraParvulo from "../pages/EducadoraParvulos";
 
 const getEducadoraParvulos = async () => {
     const response = await axios.get(`${process.env.SERVIDOR}/EducadoraParvulos`)
@@ -7,7 +6,7 @@ const getEducadoraParvulos = async () => {
 }
 
 const createEducadoraParvulo = (EducadoraParvulo, rut) => {
-    const response = axios.post(`${process.env.SERVIDOR}/EducadoraParvulo`, {
+    const response = axios.post(`${process.env.SERVIDOR}/EducadoraParvulo/crear`, {
         NombreCompleto: EducadoraParvulo.NombreCompleto,
         Rut: rut,
         fechanac: EducadoraParvulo.FechaNacimiento,
@@ -21,12 +20,12 @@ const createEducadoraParvulo = (EducadoraParvulo, rut) => {
 }
 
 const getEducadoraParvulo = async (id) => {
-    const response = await axios.get(`${process.env.SERVIDOR}/EducadoraParvulo/ver/${id}`)
+    const response = await axios.get(`${process.env.SERVIDOR}/EducadoraParvulo/ver/${_id}`)
     return response
 }
 
 const updateEducadoraParvulo = async (id, EducadoraParvulo) => {
-    const response = await axios.put(`${process.env.SERVIDOR}/EducadoraParvulo/actualizar/${id}`, EducadoraParvulo)
+    const response = await axios.put(`${process.env.SERVIDOR}/EducadoraParvulo/actualizar/${_id}`, EducadoraParvulo)
     return response
 }
 
