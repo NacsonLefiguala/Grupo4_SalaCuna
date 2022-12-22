@@ -4,7 +4,7 @@ import { createEducadoraParvulo } from '../data/EducadoraParvulos'
 import TextAreaInput from '../components/TextAreaInput'
 import InputForm from '../components/InputForm'
 import InputImage from '../components/InputImage'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router' 
 
 const EducadoraParvulos = () => {
     const [EducadoraParvulo, setEducadoraParvulos] = useState([{

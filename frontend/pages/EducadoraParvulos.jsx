@@ -13,7 +13,7 @@ const EducadoraParvulos = () => {
         Telefono: '',
         Correo: '',
         Foto: '',
-        InformacionRelevante: ''
+        InformacionRelevante: ''  
     }])
     const router = useRouter()
 
