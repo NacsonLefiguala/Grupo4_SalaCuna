@@ -51,7 +51,7 @@ const EducadorasParvulo = () => {
         <>
             <Container maxW="container.xl">
                 <Heading as="h1" size="2xl" textAlign="center" mt="10"> Listado de Educadoras de Parvulo </Heading>
-                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadoraParvulo/crear')}> Agregar Educadora Parvulo </Button>
+                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadorasParvulos/crear')}> Agregar Educadora Parvulo </Button>
                 <Stack spacing={4} mt="10">
                     <Table variant="simple">
                         <Thead>
