@@ -30,7 +30,7 @@ export const getServerSideProps = async (context) => {
 
 }
 
-const editar = ({ data }) => {
+const ver = ({ data }) => {
     const [EducadoraParvulo] = useState(data)
     const router = useRouter()
 
@@ -48,7 +48,7 @@ const editar = ({ data }) => {
                 <ShowInfo value={EducadoraParvulo.InformacionRelevante} color={"blue.300"} tag={"InformacionRelevante"} />
             </Stack>
             <HStack >
-                <Button w={"full"} colorScheme="blue" mt={10} mb={10} onClick={() => router.push('./EducadoraParvulo/actualizar/')}> Editar </Button>
+                <Button w={"full"} colorScheme="blue" mt={10} mb={10} onClick={() => router.push('./EducadoraParvulo/editar/')}> Editar </Button>
                 <Button w={"full"} colorScheme="red" mt={10} mb={10}> Eliminar </Button>
                 <Button w={"full"} colorScheme="green" mt={10} mb={10} onClick={() => router.push("/")}> Volver </Button>
             </HStack>
@@ -56,4 +56,4 @@ const editar = ({ data }) => {
     )
 }
 
-export default editar
+export default ver

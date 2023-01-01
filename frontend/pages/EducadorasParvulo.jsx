@@ -3,7 +3,7 @@ import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody 
 import { getEducadoraParvulos } from '../data/EducadoraParvulos'
 import { useRouter } from 'next/router'
 
-const EducadoraParvulos = () => {
+const EducadorasParvulo = () => {
 
     const [EducadoraParvulos, setEducadoraParvulos] = useState([{
         NombreCompleto: '',
@@ -13,7 +13,7 @@ const EducadoraParvulos = () => {
         Telefono: '',
         Correo: '',
         Foto: '',
-        InformacionRelevante: ''  
+        InformacionRelevante: ''
     }])
     const router = useRouter()
 
@@ -76,4 +76,4 @@ const EducadoraParvulos = () => {
     )
 }
 
-export default EducadoraParvulos
+export default EducadorasParvulo

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Button, Container, Heading, Stack, HStack } from '@chakra-ui/react'
-import { createEducadoraParvulo } from '../data/EducadoraParvulos'
-import TextAreaInput from '../components/TextAreaInput'
-import InputForm from '../components/InputForm'
-import InputImage from '../components/InputImage'
+import { createEducadoraParvulo } from '../../data/EducadoraParvulos'
+import TextAreaInput from '../../components/TextAreaInput'
+import InputForm from '../../components/InputForm'
+import InputImage from '../../components/InputImage'
 import { useRouter } from 'next/router' 
 
 const EducadoraParvulos = () => {

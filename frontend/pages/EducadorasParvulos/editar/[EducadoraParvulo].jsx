@@ -45,7 +45,7 @@ const editar = ({ data }) => {
                 icon: 'error',
                 title: 'Error',
                 showConfirmButton: true,
-                text: 'Ocurrio un error al actualizar la Educadora de Parvulo'
+                text: 'Ocurrio un error al editar la Educadora de Parvulo'
             })
         }
     }
