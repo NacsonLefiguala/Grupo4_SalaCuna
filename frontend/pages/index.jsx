@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button, Container, Heading, Stack, Input, FormControl, FormLabel } from '@chakra-ui/react'
-import { getEducadorasParvulo } from '../data/EducadorasParvulos'
+import { getEducadorasParvulo } from '../data/EducadoraParvulos'
 import { useRouter } from 'next/router'
 import { login } from '../data/user'
 
@@ -18,7 +18,7 @@ const index = () => {
     if (response.status == 200) {
       localStorage.setItem('token', rut)
       router.push('./EducadorasParvulo')
-    }
+    } 
   }
 
   return (
