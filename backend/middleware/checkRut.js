@@ -1,6 +1,6 @@
 const EducadoraParvulo = require('../models/EducadoraParvulo')
 
-const checkRut = (req, res, next) => {
+const checkRUT = (req, res, next) => {
     EducadoraParvulo.findOne({ rut: req.body.Rut }, (err, EducadoraParvulo) => {
         if (err) {
             return res.status(400).send({ message: "Error al obtneer usuario" })
@@ -12,4 +12,4 @@ const checkRut = (req, res, next) => {
     })
 }
 
-module.exports = checkRut
+module.exports = checkRUT
