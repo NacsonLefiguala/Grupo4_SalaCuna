@@ -74,13 +74,13 @@ const EducadoraParvulos = () => {
                                 <Text color={"red"}>{errors.correo}</Text>
                             )}
                             
-                            <InputImage label="Foto" type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} value={values.Foto} handleBlur={handleBlur} />
-                            {touched.Foto && errors.Foto && (
+                            <InputImage label="Foto" type="text"  name="Foto" handleChange={handleChange} value={values.Foto} handleBlur={handleBlur} />
+                            {touched.Foto && errors.Foto && ( 
                                 <Text color={"red"}>{errors.Foto}</Text>
                             )}
                             <TextareaInput label="informacion Relevante" name="InformacionRelevante" type="text" placeholder="observacion sobre parvulos,situaciones de parvulos, actividades u objetvos, entre otras" handleChange={handleChange} value={values.InformacionRelevante} handleBlur={handleBlur} />
                             {touched.InformacionRelevante && errors.InformacionRelevante && (
-                                <Text color={"red"}>{errors.InformacionRelevante}</Text>
+                                <Text color={"red"}>{errors.InformacionRelevante}</Text> 
                             )}
                         </Stack>
                         <HStack>
