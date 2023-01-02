@@ -8,11 +8,11 @@ const EducadoraParvuloValidation = yup.object({
         .matches(/^[a-zA-Z0-9 ]*$/, "El nombre no puede contener caracteres especiales"),
     Rut: yup.string()
         .min(9, "Debe contener minimo 9 caracteres")
-        .max(9, "Debe contener maximo 9 caracteres"),
+        .max(12, "Debe contener maximo 12 caracteres"),
     //  .required("El rut es obligatorio"),
-    // FechaDeNacimiento: yup.date()
-    //.min(01 / 01 / 2001, "Minimo que tenga 20 años")
-    //  .required("La fecha de nacimiento es requerida"),
+   // FechaDeNacimiento: yup.date()
+   // .min(dd/mm/yyyy,"Minimo que tenga 20 años")
+   // .required("La fecha de nacimiento es requerida"),
     Domicilio: yup.string()
         .min(10, "Debe contener minimo 10 caracteres")
         .max(50, "Debe contener maximo 50 caracteres"),
@@ -27,7 +27,7 @@ const EducadoraParvuloValidation = yup.object({
     // .required("El correo es obligatorio"),
     Foto: yup.string()
         .max(50, "Debe contener maximo 50 caracteres"),
-    // .required("La foto es obligatoria"),
+    // .required("La foto es obligatoria"), 
     InformacionRelevante: yup.string()
         .min(20, "Debe contener minimo 20 caracteres")
         .max(100, "Debe contener maximo 100 caracteres")

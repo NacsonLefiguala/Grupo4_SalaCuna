@@ -3,7 +3,7 @@ import { getEducadoraParvulo, updateEducadoraParvulo } from '../../../data/Educa
 import { Button, Container, Heading, HStack, Stack } from '@chakra-ui/react'
 import InputForm from '../../../components/InputForm'
 import InputImage from '../../../components/InputImage'
-import TextAreaInput from '../../../components/TextAreaInput'
+import TextareaInput from '../../../components/TextareaInput'
 import { useRouter } from 'next/router'
 import Swal from 'sweetalert2'
 
@@ -54,16 +54,16 @@ const editar = ({ data }) => {
         <Container maxW="container.xl" mt={10}>
             <Heading as={"h1"} size={"2xl"} textAlign={"center"}>Editar Educadora de Parvulo: {EducadoraParvulo.NombreCompleto}</Heading>
             <Stack spacing={4} mt={10}>
-                <TextAreaInput label="NombreCompleto" handleChange={handleChange} name="name" placeholder="Juanito Alcachofa Peréz" type="text" value={EducadoraParvulo.NombreCompleto} />
+                <TextareaInput label="NombreCompleto" handleChange={handleChange} name="NombreCompleto" placeholder="Juanito Alcachofa Peréz" type="text" value={EducadoraParvulo.NombreCompleto} />
                 <HStack>
-                    <TextAreaInput label="Rut" handleChange={handleChange} name="rut" placeholder="xx.xxx.xxx-x" type="text" value={EducadoraParvulo.Rut} />
-                    <InputForm type="date" name="FechaNacimiento" value={EducadoraParvulo.FechaDeNacimiento} min="2021-01-01" max="2022-12-14" handleChange={handleChange} />
+                    <TextareaInput label="Rut" handleChange={handleChange} name="rut" placeholder="xx.xxx.xxx-x" type="text" value={EducadoraParvulo.Rut} />
+                    <InputForm type="date" name="FechaDeNacimiento" value={EducadoraParvulo.FechaDeNacimiento} min="2021-01-01" max="1900-12-14" handleChange={handleChange} />
                 </HStack>
-                <TextAreaInput label="Domicilio" handleChange={handleChange} name="Domicilio" placeholder="Victor Lamas 1177, Concepcion" type="text" value={EducadoraParvulo.Domicilio} />
-                <TextAreaInput label="telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="tel" value={EducadoraParvulo.Telefono} />
-                <TextAreaInput label="correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
+                <TextareaInput label="Domicilio" handleChange={handleChange} name="Domicilio" placeholder="Victor Lamas 1177, Concepcion" type="text" value={EducadoraParvulo.Domicilio} />
+                <TextareaInput label="telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="text" value={EducadoraParvulo.Telefono} />
+                <TextareaInput label="correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
                 <InputImage label="foto" type="image" src="url-image" name="foto" alt="texto-alternativo" onChange={handleChange} value={EducadoraParvulo.Foto} />
-                <TextAreaInput label="informacionrelevante" name="informacionrelevante" type="text" placeholder="observacion sobre parvulos,situaciones de parvulos, actividades u objetvos, entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
+                <TextareaInput label="informacionrelevante" name="informacionrelevante" type="text" placeholder="observacion sobre parvulos,situaciones de parvulos, actividades u objetvos, entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
             </Stack>
             <HStack>
                 <Button colorScheme="blue" mt={10} mb={10} onClick={submitEducadoraParvulo}>Confirmar</Button>

@@ -9,7 +9,7 @@ const createEducadoraParvulo = (EducadoraParvulo) => {
     const response = axios.post(`${process.env.SERVIDOR}/EducadoraParvulo`, {
         NombreCompleto: EducadoraParvulo.NombreCompleto,
         Rut: EducadoraParvulo.Rut,
-        fechanac: EducadoraParvulo.FechaNacimiento,
+        FechaDeNacimiento: EducadoraParvulo.FechaDeNacimiento,
         Domicilio: EducadoraParvulo.Domicilio,
         Telefono: EducadoraParvulo.Telefono,
         Correo: EducadoraParvulo.Correo,
@@ -21,12 +21,12 @@ const createEducadoraParvulo = (EducadoraParvulo) => {
 
 const getEducadoraParvulo = async (id) => {
     console.log(id)
-    const response = await axios.get(`${process.env.SERVIDOR}/EducadoraParvulo/search/${id}`)
+    const response = await axios.get(`${process.env.SERVIDOR}/EducadorasParvulos/ver/${id}`)
     return response
 }
 
 const updateEducadoraParvulo = (id, EducadoraParvulo) => {
-    const response = axios.put(`${process.env.SERVIDOR}/EducadoraParvulo/update/${id}`, EducadoraParvulo)
+    const response = axios.put(`${process.env.SERVIDOR}/EducadoraParvulo/Actualizar/${id}`, EducadoraParvulo)
     return response
 }
 
