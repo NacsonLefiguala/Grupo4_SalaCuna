@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Button, Container, Heading, Stack, Input, FormControl, FormLabel } from '@chakra-ui/react'
-import { getEducadorasParvulo } from '../data/EducadoraParvulos'
+import { Button, Container, Heading, Input, Stack, FormControl } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { login } from '../data/user'
 
 const index = () => {
+
   const [rut, setRut] = useState('')
   const router = useRouter()
 
@@ -12,28 +12,28 @@ const index = () => {
     setRut(e.target.value)
   }
 
-  const onSumbit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     const response = await login(rut)
-    if (response.status == 200) {
+    if (response.status === 200) {
       localStorage.setItem('token', rut)
-      router.push('./EducadorasParvulo')
-    } 
+      router.push('./EducadorasParvulos')
+    }
   }
 
   return (
     <>
       <Container maxW="container.xl" centerContent>
-        <Heading as="h1" size="2x1" textAlign="center" mt="10"> Que usuario ingresara </Heading>
+        <Heading as="h1" size="2xl" textAlign="center" mt="10"> Ingrese rut </Heading>
         <Stack my={5}>
           <FormControl>
-            <FormLabel> Rut del usuario </FormLabel>
             <Input onChange={handleChange} />
           </FormControl>
-          <Button colorScheme="green" onClick={onSumbit}> Ingresar </Button>
+          <Button colorScheme={"blue"} onClick={onSubmit} >Ingresar</Button>
         </Stack>
       </Container>
     </>
+
   )
 }
 

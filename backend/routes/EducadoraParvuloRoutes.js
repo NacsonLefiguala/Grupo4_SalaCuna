@@ -5,10 +5,10 @@ const ValidatorCreate = require('../Validators/EducadoraParvuloValidator')
 const chechRut = require('../middleware/checkRut')
 
 api.post('/EducadoraParvulo/crear', ValidatorCreate, EducadoraParvuloController.createEducadoraParvulo);
-api.get('/EducadoraParvulos', EducadoraParvuloController.getEducadoraParvulos);
+api.get('/EducadorasParvulos', EducadoraParvuloController.getEducadoraParvulos);
 api.delete("/EducadoraParvulo/:id", EducadoraParvuloController.deleteEducadoraParvulo);
-api.patch("/EducadoraParvulo/actualizar/:id", EducadoraParvuloController.updateEducadoraParvulo);
-api.get('/EducadoraParvulo/ver/:id', EducadoraParvuloController.getSpecificEducadoraParvulo);
+api.patch("/EducadoraParvulo/update/:id", EducadoraParvuloController.updateEducadoraParvulo);
+api.get('/EducadoraParvulo/search/:id', EducadoraParvuloController.getSpecificEducadoraParvulo);
 api.post('/login', chechRut)
 
 module.exports = api;

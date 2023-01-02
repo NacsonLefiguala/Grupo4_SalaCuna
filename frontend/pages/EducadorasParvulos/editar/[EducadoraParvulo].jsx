@@ -17,26 +17,27 @@ export const getServerSideProps = async (context) => {
 }
 
 const editar = ({ data }) => {
-    const [EducadoraParvulo, setEducadoraParvulo] = useState(data)
+    const [product, setEducadoraParvulo] = useState(data)
     const router = useRouter()
-    const { Educadoraparvulo } = router.query
+    const { EducadoraParvulo } = router.query
 
     const handleChange = (e) => {
         setEducadoraParvulo({
-            ...EducadoraParvulo,
+            ...product,
             [e.target.name]: e.target.value
         })
+
     }
 
-    const sumbitEducadoraParvulo = async (e) => {
-        e.preventdefault()
-        const response = await updateEducadoraParvulo(Educadoraparvulo, EducadoraParvulo)
-        if (response.status == 200) {
+    const submitEducadoraParvulo = async (e) => {
+        e.preventDefault()
+        const response = await updateEducadoraParvulo(producto, product)
+        if (response.status === 200) {
             Swal.fire({
-                icon: 'succes',
-                title: 'Educadora Parvulo actualizada',
+                icon: 'success',
+                title: 'Educadora de Parvulo actualizado',
                 showConfirmButton: true,
-                text: 'La Educadora de Parvulo se actualizo correctamente'
+                text: 'La Educadora de Parvulo se actualizó correctamente'
             }).then(() => {
                 router.push('/')
             })
@@ -45,18 +46,19 @@ const editar = ({ data }) => {
                 icon: 'error',
                 title: 'Error',
                 showConfirmButton: true,
-                text: 'Ocurrio un error al editar la Educadora de Parvulo'
+                text: 'Ocurrió un error al actualizar la Educadora de Parvulo'
             })
         }
     }
-
     return (
         <Container maxW="container.xl" mt={10}>
-            <Heading as={"h1"} size={"2x1"} textAlign={"center"}> Editar Educadora de Parvulo : {EducadoraParvulo.NombreCompleto} </Heading>
-            <Stack>
+            <Heading as={"h1"} size={"2xl"} textAlign={"center"}>Editar Educadora de Parvulo: {EducadoraParvulo.NombreCompleto}</Heading>
+            <Stack spacing={4} mt={10}>
                 <TextAreaInput label="NombreCompleto" handleChange={handleChange} name="name" placeholder="Juanito Alcachofa Peréz" type="text" value={EducadoraParvulo.NombreCompleto} />
-                <TextAreaInput label="Rut" handleChange={handleChange} name="rut" placeholder="xx.xxx.xxx-x" type="text" value={EducadoraParvulo.Rut} />
-                <InputForm type="date" name="FechaNacimiento" value={EducadoraParvulo.FechaDeNacimiento} min="2021-01-01" max="2022-12-14" handleChange={handleChange} />
+                <HStack>
+                    <TextAreaInput label="Rut" handleChange={handleChange} name="rut" placeholder="xx.xxx.xxx-x" type="text" value={EducadoraParvulo.Rut} />
+                    <InputForm type="date" name="FechaNacimiento" value={EducadoraParvulo.FechaDeNacimiento} min="2021-01-01" max="2022-12-14" handleChange={handleChange} />
+                </HStack>
                 <TextAreaInput label="Domicilio" handleChange={handleChange} name="Domicilio" placeholder="Victor Lamas 1177, Concepcion" type="text" value={EducadoraParvulo.Domicilio} />
                 <TextAreaInput label="telefono" handleChange={handleChange} name="Telefono" placeholder="(Numero verficador) Telefono" type="tel" value={EducadoraParvulo.Telefono} />
                 <TextAreaInput label="correo" name="Correo" type="text" placeholder="user@salacuna.cl" onChange={handleChange} value={EducadoraParvulo.Correo} />
@@ -64,8 +66,8 @@ const editar = ({ data }) => {
                 <TextAreaInput label="informacionrelevante" name="informacionrelevante" type="text" placeholder="observacion sobre parvulos,situaciones de parvulos, actividades u objetvos, entre otras" onChange={handleChange} value={EducadoraParvulo.InformacionRelevante} />
             </Stack>
             <HStack>
-                <Button colorScheme="Blue" mt={10} mb={10} onClick={sumbitEducadoraParvulo} > Editar Educadora de Parvulo </Button>
-                <Button colorScheme="Blue" mt={10} mb={10} onClick={() => router.push('/')}> Cancelar </Button>
+                <Button colorScheme="blue" mt={10} mb={10} onClick={submitEducadoraParvulo}>Confirmar</Button>
+                <Button colorScheme="red" mt={10} mb={10} onClick={() => router.push('/')}>Cancelar</Button>
             </HStack>
         </Container>
     )

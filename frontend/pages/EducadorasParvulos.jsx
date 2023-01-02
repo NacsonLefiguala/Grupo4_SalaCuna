@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Button, Container, Heading, HStack, Stack, Table, Thead, Tr, Td, Tbody } from '@chakra-ui/react'
-import { getEducadoraParvulos } from '../data/EducadoraParvulos'
+import { Button, Container, Heading, HStack, Stack, Table, Thead, Td, Tbody, Tr } from '@chakra-ui/react'
+import { getEducadorasParvulos } from '../data/EducadoraParvulos'
 import { useRouter } from 'next/router'
 
-const EducadorasParvulo = () => {
+const EducadorasParvulos = () => {
 
-    const [EducadoraParvulos, setEducadoraParvulos] = useState([{
+    const [EducadoraParvulos, setEducadorasParvulos] = useState([{
         NombreCompleto: '',
         Rut: '',
         FechaDeNacimiento: '',
@@ -23,7 +23,7 @@ const EducadorasParvulo = () => {
                 <Tr key={EducadoraParvulo._id}>
                     <Td>{EducadoraParvulo.NombreCompleto}</Td>
                     <Td>{EducadoraParvulo.Rut}</Td>
-                    <Td>{EducadoraParvulo.FechaNacimiento}</Td>
+                    <Td>{EducadoraParvulo.FechaDeNacimiento}</Td>
                     <Td>{EducadoraParvulo.Domicilio}</Td>
                     <Td>{EducadoraParvulo.Telefono}</Td>
                     <Td>{EducadoraParvulo.Correo}</Td>
@@ -41,8 +41,8 @@ const EducadorasParvulo = () => {
     }
 
     useEffect(() => {
-        getEducadoraParvulos().then(res => {
-            setEducadoraParvulos(res.data)
+        getEducadorasParvulos().then(res => {
+            setEducadorasParvulos(res.data)
         })
     }, [])
 
@@ -51,18 +51,19 @@ const EducadorasParvulo = () => {
         <>
             <Container maxW="container.xl">
                 <Heading as="h1" size="2xl" textAlign="center" mt="10"> Listado de Educadoras de Parvulo </Heading>
-                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('./EducadorasParvulos/crear')}> Agregar Educadora Parvulo </Button>
+                <Button colorScheme="blue" mt="10" mb="10" onClick={() => router.push('/EducadorasParvulos/crear')}>Agregar Educadora Parvulo</Button>
                 <Stack spacing={4} mt="10">
                     <Table variant="simple">
                         <Thead>
                             <Tr>
-                                <Td>Nombre Completo</Td>
+                                <Td>NombreCompleto</Td>
                                 <Td>Rut</Td>
-                                <Td>Fecha De Nacimiento</Td>
+                                <Td>FechaDeNacimiento</Td>
+                                <Td>Domicilio</Td>
                                 <Td>Telefono</Td>
                                 <Td>Correo</Td>
                                 <Td>Foto</Td>
-                                <Td>Informacion Relevante</Td>
+                                <Td>InformacionRelevante</Td>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -76,4 +77,4 @@ const EducadorasParvulo = () => {
     )
 }
 
-export default EducadorasParvulo
+export default EducadorasParvulos
